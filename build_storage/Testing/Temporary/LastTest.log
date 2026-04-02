@@ -1,0 +1,192 @@
+Start testing: Mar 11 17:15 EDT
+----------------------------------------------------------
+1/7 Testing: StorageInterface.InMemoryRoundTrip
+1/7 Test: StorageInterface.InMemoryRoundTrip
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=StorageInterface.InMemoryRoundTrip" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"StorageInterface.InMemoryRoundTrip" start time: Mar 11 17:15 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = StorageInterface.InMemoryRoundTrip
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StorageInterface
+[ RUN      ] StorageInterface.InMemoryRoundTrip
+[       OK ] StorageInterface.InMemoryRoundTrip (0 ms)
+[----------] 1 test from StorageInterface (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StorageInterface.InMemoryRoundTrip" end time: Mar 11 17:15 EDT
+"StorageInterface.InMemoryRoundTrip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/7 Testing: StorageInterface.ReplayFilters
+2/7 Test: StorageInterface.ReplayFilters
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=StorageInterface.ReplayFilters" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"StorageInterface.ReplayFilters" start time: Mar 11 17:15 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = StorageInterface.ReplayFilters
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StorageInterface
+[ RUN      ] StorageInterface.ReplayFilters
+[       OK ] StorageInterface.ReplayFilters (0 ms)
+[----------] 1 test from StorageInterface (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StorageInterface.ReplayFilters" end time: Mar 11 17:15 EDT
+"StorageInterface.ReplayFilters" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: StorageInterface.MonotonicOffsetsMultiProducer
+3/7 Test: StorageInterface.MonotonicOffsetsMultiProducer
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=StorageInterface.MonotonicOffsetsMultiProducer" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"StorageInterface.MonotonicOffsetsMultiProducer" start time: Mar 11 17:15 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = StorageInterface.MonotonicOffsetsMultiProducer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StorageInterface
+[ RUN      ] StorageInterface.MonotonicOffsetsMultiProducer
+[       OK ] StorageInterface.MonotonicOffsetsMultiProducer (0 ms)
+[----------] 1 test from StorageInterface (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StorageInterface.MonotonicOffsetsMultiProducer" end time: Mar 11 17:15 EDT
+"StorageInterface.MonotonicOffsetsMultiProducer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: JsonlAsync.Backpressure
+4/7 Test: JsonlAsync.Backpressure
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=JsonlAsync.Backpressure" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"JsonlAsync.Backpressure" start time: Mar 11 17:15 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = JsonlAsync.Backpressure
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from JsonlAsync
+[ RUN      ] JsonlAsync.Backpressure
+[       OK ] JsonlAsync.Backpressure (0 ms)
+[----------] 1 test from JsonlAsync (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"JsonlAsync.Backpressure" end time: Mar 11 17:15 EDT
+"JsonlAsync.Backpressure" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/7 Testing: JsonlAsync.FlushAndDurability
+5/7 Test: JsonlAsync.FlushAndDurability
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=JsonlAsync.FlushAndDurability" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"JsonlAsync.FlushAndDurability" start time: Mar 11 17:15 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = JsonlAsync.FlushAndDurability
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from JsonlAsync
+[ RUN      ] JsonlAsync.FlushAndDurability
+[       OK ] JsonlAsync.FlushAndDurability (0 ms)
+[----------] 1 test from JsonlAsync (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"JsonlAsync.FlushAndDurability" end time: Mar 11 17:15 EDT
+"JsonlAsync.FlushAndDurability" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/7 Testing: JsonlAsync.CloseBehavior
+6/7 Test: JsonlAsync.CloseBehavior
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=JsonlAsync.CloseBehavior" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"JsonlAsync.CloseBehavior" start time: Mar 11 17:15 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = JsonlAsync.CloseBehavior
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from JsonlAsync
+[ RUN      ] JsonlAsync.CloseBehavior
+[       OK ] JsonlAsync.CloseBehavior (0 ms)
+[----------] 1 test from JsonlAsync (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"JsonlAsync.CloseBehavior" end time: Mar 11 17:15 EDT
+"JsonlAsync.CloseBehavior" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/7 Testing: JsonlAsync.MalformedLineRecovery
+7/7 Test: JsonlAsync.MalformedLineRecovery
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=JsonlAsync.MalformedLineRecovery" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"JsonlAsync.MalformedLineRecovery" start time: Mar 11 17:15 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = JsonlAsync.MalformedLineRecovery
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from JsonlAsync
+[ RUN      ] JsonlAsync.MalformedLineRecovery
+[       OK ] JsonlAsync.MalformedLineRecovery (0 ms)
+[----------] 1 test from JsonlAsync (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"JsonlAsync.MalformedLineRecovery" end time: Mar 11 17:15 EDT
+"JsonlAsync.MalformedLineRecovery" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 11 17:15 EDT

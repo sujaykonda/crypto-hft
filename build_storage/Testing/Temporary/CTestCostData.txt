@@ -1,0 +1,8 @@
+StorageInterface.InMemoryRoundTrip 4 0.000973552
+StorageInterface.ReplayFilters 4 0.000613812
+StorageInterface.MonotonicOffsetsMultiProducer 4 0.000660521
+JsonlAsync.Backpressure 4 0.000623062
+JsonlAsync.FlushAndDurability 4 0.000610031
+JsonlAsync.CloseBehavior 4 0.000678323
+JsonlAsync.MalformedLineRecovery 4 0.000638438
+---

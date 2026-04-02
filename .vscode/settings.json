@@ -1,0 +1,4 @@
+{
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json"
+}

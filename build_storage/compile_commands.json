@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/Users/sujaykonda/Downloads/crypto_hft/build_storage",
+  "command": "/usr/bin/c++  -I/Users/sujaykonda/Downloads/crypto_hft/include -isystem /opt/homebrew/include -O3 -DNDEBUG -std=c++20 -arch arm64 -o CMakeFiles/hft_storage.dir/src/storage/storage_types.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/src/storage/storage_types.cpp",
+  "file": "/Users/sujaykonda/Downloads/crypto_hft/src/storage/storage_types.cpp",
+  "output": "CMakeFiles/hft_storage.dir/src/storage/storage_types.cpp.o"
+},
+{
+  "directory": "/Users/sujaykonda/Downloads/crypto_hft/build_storage",
+  "command": "/usr/bin/c++  -I/Users/sujaykonda/Downloads/crypto_hft/include -isystem /opt/homebrew/include -O3 -DNDEBUG -std=c++20 -arch arm64 -o CMakeFiles/hft_storage.dir/src/storage/in_memory_storage.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/src/storage/in_memory_storage.cpp",
+  "file": "/Users/sujaykonda/Downloads/crypto_hft/src/storage/in_memory_storage.cpp",
+  "output": "CMakeFiles/hft_storage.dir/src/storage/in_memory_storage.cpp.o"
+},
+{
+  "directory": "/Users/sujaykonda/Downloads/crypto_hft/build_storage",
+  "command": "/usr/bin/c++  -I/Users/sujaykonda/Downloads/crypto_hft/include -isystem /opt/homebrew/include -O3 -DNDEBUG -std=c++20 -arch arm64 -o CMakeFiles/hft_storage.dir/src/storage/jsonl_async_storage.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/src/storage/jsonl_async_storage.cpp",
+  "file": "/Users/sujaykonda/Downloads/crypto_hft/src/storage/jsonl_async_storage.cpp",
+  "output": "CMakeFiles/hft_storage.dir/src/storage/jsonl_async_storage.cpp.o"
+},
+{
+  "directory": "/Users/sujaykonda/Downloads/crypto_hft/build_storage",
+  "command": "/usr/bin/c++ -DNDEBUG -I/Users/sujaykonda/Downloads/crypto_hft/include -isystem /opt/homebrew/include -O3 -DNDEBUG -std=c++20 -flto=thin -arch arm64 -O3 -march=native -mtune=native -o CMakeFiles/hft_platform.dir/src/main.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/src/main.cpp",
+  "file": "/Users/sujaykonda/Downloads/crypto_hft/src/main.cpp",
+  "output": "CMakeFiles/hft_platform.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/sujaykonda/Downloads/crypto_hft/build_storage",
+  "command": "/usr/bin/c++  -I/Users/sujaykonda/Downloads/crypto_hft/include -isystem /opt/homebrew/include -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/include -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest -O3 -DNDEBUG -std=c++20 -arch arm64 -o CMakeFiles/test_storage.dir/tests/test_storage.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/tests/test_storage.cpp",
+  "file": "/Users/sujaykonda/Downloads/crypto_hft/tests/test_storage.cpp",
+  "output": "CMakeFiles/test_storage.dir/tests/test_storage.cpp.o"
+},
+{
+  "directory": "/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googlemock/include -I/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googlemock -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/include -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest -O3 -DNDEBUG -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googlemock/include -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googlemock -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/include -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest -O3 -DNDEBUG -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/include -I/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest -O3 -DNDEBUG -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/include -isystem /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest -O3 -DNDEBUG -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+}
+]
