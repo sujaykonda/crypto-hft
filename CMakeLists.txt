@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
+if(CMAKE_VERSION VERSION_GREATER_EQUAL 4.0)
+    set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+endif()
 project(crypto_hft VERSION 1.0.0 LANGUAGES CXX)
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -20,16 +23,6 @@ message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 # Dependencies
 # ═══════════════════════════════════════════════════════════════════════════
 
-# Boost (Beast is header-only; prefer BoostConfig.cmake targets)
-# Homebrew Boost 1.90 works best this way.
-find_package(Boost 1.70 REQUIRED)  # raise/lower if you want; 1.70+ has good targets
-
-message(STATUS "Boost version: ${Boost_VERSION}")
-
-# OpenSSL (required for SSL/TLS)
-find_package(OpenSSL REQUIRED)
-message(STATUS "OpenSSL version: ${OPENSSL_VERSION}")
-
 # nlohmann_json (for JSON parsing)
 find_package(nlohmann_json 3.9 QUIET)
 if(NOT nlohmann_json_FOUND)
@@ -45,6 +38,21 @@ endif()
 
 # Threading
 find_package(Threads REQUIRED)
+
+option(BUILD_PLATFORM "Build the live trading executable" ON)
+
+if(BUILD_PLATFORM)
+    # Boost (Beast is header-only; prefer BoostConfig.cmake targets)
+    if(POLICY CMP0167)
+        cmake_policy(SET CMP0167 OLD)
+    endif()
+    find_package(Boost 1.70 REQUIRED)
+    message(STATUS "Boost version: ${Boost_VERSION}")
+
+    # OpenSSL (required for SSL/TLS)
+    find_package(OpenSSL REQUIRED)
+    message(STATUS "OpenSSL version: ${OPENSSL_VERSION}")
+endif()
 
 # ═══════════════════════════════════════════════════════════════════════════
 # Storage Library
@@ -69,45 +77,48 @@ target_link_libraries(hft_storage
 # ═══════════════════════════════════════════════════════════════════════════
 # Main Executable
 # ═══════════════════════════════════════════════════════════════════════════
-add_executable(hft_platform
-    src/main.cpp
-)
+if(BUILD_PLATFORM)
+    add_executable(hft_platform
+        src/main.cpp
+    )
 
-target_include_directories(hft_platform
-    PRIVATE
-        ${CMAKE_SOURCE_DIR}/include
-)
+    target_include_directories(hft_platform
+        PRIVATE
+            ${CMAKE_SOURCE_DIR}/include
+    )
 
-# Compiler flags (optimized for HFT)
-target_compile_options(hft_platform PRIVATE
-    $<$<CONFIG:Release>:-O3 -march=native -mtune=native>
-    $<$<CONFIG:RelWithDebInfo>:-O2 -g -march=native>
-    $<$<CONFIG:Debug>:-O0 -g -fsanitize=address,undefined>
-)
+    # Compiler flags (optimized for HFT)
+    target_compile_options(hft_platform PRIVATE
+        $<$<CONFIG:Release>:-O3 -march=native -mtune=native>
+        $<$<CONFIG:RelWithDebInfo>:-O2 -g -march=native>
+        $<$<CONFIG:Debug>:-O0 -g -fsanitize=address,undefined>
+    )
 
-target_compile_definitions(hft_platform PRIVATE
-    $<$<CONFIG:Release>:NDEBUG>
-    $<$<CONFIG:RelWithDebInfo>:NDEBUG>
-)
+    target_compile_definitions(hft_platform PRIVATE
+        $<$<CONFIG:Release>:NDEBUG>
+        $<$<CONFIG:RelWithDebInfo>:NDEBUG>
+    )
 
-# If you enable sanitizers, you also need the linker flags:
-target_link_options(hft_platform PRIVATE
-    $<$<CONFIG:Debug>:-fsanitize=address,undefined>
-)
+    # If you enable sanitizers, you also need the linker flags:
+    target_link_options(hft_platform PRIVATE
+        $<$<CONFIG:Debug>:-fsanitize=address,undefined>
+    )
 
-target_link_libraries(hft_platform
-    PRIVATE
-        Boost::headers          # Beast/Asio headers
-        OpenSSL::SSL
-        OpenSSL::Crypto
-        nlohmann_json::nlohmann_json
-        Threads::Threads
-)
+    target_link_libraries(hft_platform
+        PRIVATE
+            hft_storage
+            Boost::headers
+            OpenSSL::SSL
+            OpenSSL::Crypto
+            nlohmann_json::nlohmann_json
+            Threads::Threads
+    )
+endif()
 
 # ═══════════════════════════════════════════════════════════════════════════
 # Enable LTO for Release builds
 # ═══════════════════════════════════════════════════════════════════════════
-if(CMAKE_BUILD_TYPE STREQUAL "Release")
+if(BUILD_PLATFORM AND CMAKE_BUILD_TYPE STREQUAL "Release")
     include(CheckIPOSupported)
     check_ipo_supported(RESULT lto_supported OUTPUT lto_error)
     if(lto_supported)
@@ -125,17 +136,13 @@ option(BUILD_TESTS "Build test executables" OFF)
 if(BUILD_TESTS)
     enable_testing()
 
-    find_package(GTest CONFIG QUIET)
-    if(NOT GTest_FOUND)
-        message(STATUS "GTest not found, fetching from GitHub...")
-        include(FetchContent)
-        FetchContent_Declare(
-            googletest
-            GIT_REPOSITORY https://github.com/google/googletest.git
-            GIT_TAG v1.14.0
-        )
-        FetchContent_MakeAvailable(googletest)
-    endif()
+    include(FetchContent)
+    FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG v1.14.0
+    )
+    FetchContent_MakeAvailable(googletest)
 
     add_executable(test_storage tests/test_storage.cpp)
     target_link_libraries(test_storage
@@ -144,14 +151,24 @@ if(BUILD_TESTS)
             GTest::gtest_main
     )
 
+    add_executable(test_strategy_runtime tests/test_strategy_runtime.cpp)
+    target_link_libraries(test_strategy_runtime
+        PRIVATE
+            hft_storage
+            GTest::gtest_main
+    )
+
     include(GoogleTest)
     gtest_discover_tests(test_storage)
+    gtest_discover_tests(test_strategy_runtime)
 endif()
 
 # ═══════════════════════════════════════════════════════════════════════════
 # Installation
 # ═══════════════════════════════════════════════════════════════════════════
-install(TARGETS hft_platform RUNTIME DESTINATION bin)
+if(BUILD_PLATFORM)
+    install(TARGETS hft_platform RUNTIME DESTINATION bin)
+endif()
 
 install(DIRECTORY include/
     DESTINATION include/crypto_hft
