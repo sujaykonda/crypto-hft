@@ -1,4 +1,5 @@
 #include "core/order_executor.hpp"
+#include "exchange/market_data_client.hpp"
 #include "storage/jsonl_async_storage.hpp"
 #include "strategy/example_strategies.hpp"
 #include "strategy/live_order_executor_sink.hpp"
@@ -10,6 +11,7 @@
 #include <memory>
 #include <string>
 #include <thread>
+#include <vector>
 
 using namespace hft;
 
@@ -78,15 +80,15 @@ int main(int argc, char** argv) {
         auto ws_client = std::make_shared<CryptoComWebSocketClient>(
             ioc, ssl_ctx, api_key, api_secret, use_sandbox);
 
-        OrderExecutor executor(ws_client);
+        auto executor = std::make_unique<OrderExecutor>(ws_client);
         LiveOrderExecutorSink execution_sink(
             [&executor](const Trade& trade, OrderCallback callback) {
-                return executor.submit_trade(trade, std::move(callback));
+                return executor->submit_trade(trade, std::move(callback));
             },
             [&executor](const std::string& instrument, uint64_t order_id, uint64_t client_oid) {
-                executor.cancel_order(instrument, order_id, client_oid);
+                executor->cancel_order(instrument, order_id, client_oid);
             },
-            [&executor](const std::string& instrument) { executor.cancel_all_orders(instrument); },
+            [&executor](const std::string& instrument) { executor->cancel_all_orders(instrument); },
             storage);
         StrategyManager strategy_mgr(&execution_sink, storage);
 
@@ -94,7 +96,22 @@ int main(int argc, char** argv) {
         strategy_mgr.add_strategy<SimpleMarketMaker>(2, "ETH_USDT", 15.0, 0.01);
         strategy_mgr.add_strategy<SimpleMomentum>(3, "BTC_USDT", 0.5, 0.0005);
 
-        executor.start();
+        const std::vector<std::string> market_instruments =
+            parse_market_instruments_env({"BTC_USDT", "ETH_USDT"});
+        CryptoComMarketDataClient market_data_client(
+            market_instruments,
+            [&strategy_mgr](const QuoteUpdate& quote) {
+                strategy_mgr.dispatch_quote(quote);
+            },
+            [&strategy_mgr](const TradeEvent& trade) {
+                strategy_mgr.dispatch_trade(trade);
+            },
+            [](const std::string& error) {
+                std::cerr << "[MarketData] " << error << std::endl;
+            },
+            make_crypto_com_market_config(use_sandbox, 10));
+
+        executor->start();
 
         std::thread io_thread([&ioc]() { ioc.run(); });
 
@@ -110,6 +127,9 @@ int main(int argc, char** argv) {
             g_running = false;
         } else {
             strategy_mgr.start_all();
+            market_data_client.start();
+            std::cout << "Market data subscribed to " << market_instruments.size()
+                      << " instruments" << std::endl;
             std::cout << "\nHFT Platform running with " << strategy_mgr.count()
                       << " strategies. Press Ctrl+C to stop.\n"
                       << std::endl;
@@ -121,7 +141,7 @@ int main(int argc, char** argv) {
                 break;
             }
 
-            const auto stats = executor.get_stats();
+            const auto stats = executor->get_stats();
             std::cout << "\n=======================================" << std::endl;
             std::cout << "       Execution Statistics" << std::endl;
             std::cout << "=======================================" << std::endl;
@@ -140,8 +160,9 @@ int main(int argc, char** argv) {
         }
 
         std::cout << "\nShutting down gracefully..." << std::endl;
+        market_data_client.stop();
         strategy_mgr.stop_all();
-        executor.stop();
+        executor->stop();
         ioc.stop();
 
         if (io_thread.joinable()) {

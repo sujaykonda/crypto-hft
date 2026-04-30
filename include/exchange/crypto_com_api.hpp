@@ -12,9 +12,6 @@ namespace hft {
 
 using json = nlohmann::json;
 
-// ═══════════════════════════════════════════════════════════════════════════
-// Crypto.com Exchange Constants
-// ═══════════════════════════════════════════════════════════════════════════
 
 namespace CryptoComEndpoints {
     // Production
@@ -35,9 +32,6 @@ namespace CryptoComEndpoints {
     constexpr const char* PATH_MARKET  = "/exchange/v1/market";
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-// Error Codes from Crypto.com
-// ═══════════════════════════════════════════════════════════════════════════
 
 namespace CryptoComErrors {
     constexpr int SUCCESS = 0;
@@ -71,10 +65,6 @@ namespace CryptoComErrors {
     constexpr int PRICE_OVER_LIMIT = 30038;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-// Request/Response Message Builders
-// ═══════════════════════════════════════════════════════════════════════════
-
 class CryptoComMessageBuilder {
     const AuthHandler& auth_;
     std::atomic<uint64_t> request_id_{1};
@@ -86,9 +76,6 @@ public:
         return request_id_.fetch_add(1, std::memory_order_relaxed);
     }
 
-    // ───────────────────────────────────────────────────────────────────
-    // Authentication Request
-    // ───────────────────────────────────────────────────────────────────
     json build_auth_request() {
         uint64_t id = next_id();
         uint64_t nonce = AuthHandler::current_timestamp_ms();
@@ -106,9 +93,6 @@ public:
         };
     }
 
-    // ───────────────────────────────────────────────────────────────────
-    // Create Order Request
-    // ───────────────────────────────────────────────────────────────────
     json build_create_order(const Trade& trade) {
         uint64_t id = next_id();
         uint64_t nonce = AuthHandler::current_timestamp_ms();
@@ -153,9 +137,6 @@ public:
         };
     }
 
-    // ───────────────────────────────────────────────────────────────────
-    // Cancel Order Request
-    // ───────────────────────────────────────────────────────────────────
     json build_cancel_order(const std::string& instrument_name, 
                             uint64_t order_id = 0,
                             uint64_t client_oid = 0) {
@@ -183,9 +164,6 @@ public:
         };
     }
 
-    // ───────────────────────────────────────────────────────────────────
-    // Cancel All Orders
-    // ───────────────────────────────────────────────────────────────────
     json build_cancel_all_orders(const std::string& instrument_name = "") {
         uint64_t id = next_id();
         uint64_t nonce = AuthHandler::current_timestamp_ms();
@@ -208,9 +186,6 @@ public:
         };
     }
 
-    // ───────────────────────────────────────────────────────────────────
-    // Get Open Orders
-    // ───────────────────────────────────────────────────────────────────
     json build_get_open_orders(const std::string& instrument_name = "") {
         uint64_t id = next_id();
         uint64_t nonce = AuthHandler::current_timestamp_ms();
@@ -233,9 +208,6 @@ public:
         };
     }
 
-    // ───────────────────────────────────────────────────────────────────
-    // Heartbeat Response
-    // ───────────────────────────────────────────────────────────────────
     json build_heartbeat_response(uint64_t request_id) {
         return {
             {"id", request_id},
@@ -243,9 +215,6 @@ public:
         };
     }
 
-    // ───────────────────────────────────────────────────────────────────
-    // Subscribe to user events
-    // ───────────────────────────────────────────────────────────────────
     json build_subscribe_user_order(const std::string& instrument_name = "") {
         uint64_t id = next_id();
         uint64_t nonce = AuthHandler::current_timestamp_ms();
@@ -333,9 +302,6 @@ private:
     }
 };
 
-// ═══════════════════════════════════════════════════════════════════════════
-// Response Parser
-// ═══════════════════════════════════════════════════════════════════════════
 
 class CryptoComResponseParser {
 public:
@@ -450,6 +416,7 @@ private:
             return OrderStatus::EXPIRED;
         return OrderStatus::NEW;
     }
+
 };
 
 } // namespace hft

@@ -80,6 +80,7 @@ target_link_libraries(hft_storage
 if(BUILD_PLATFORM)
     add_executable(hft_platform
         src/main.cpp
+        src/exchange/market_data_client.cpp
     )
 
     target_include_directories(hft_platform
