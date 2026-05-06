@@ -1,0 +1,28 @@
+{
+  "tests": 2,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "IpcProtocol",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "ParsesSubscribeSnapshotAndErrors",
+          "file": "\/Users\/sujaykonda\/Downloads\/crypto_hft\/tests\/test_ipc.cpp",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "name": "UnixDomainCommandServer",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "HandlesPingSubscribeAndSnapshot",
+          "file": "\/Users\/sujaykonda\/Downloads\/crypto_hft\/tests\/test_ipc.cpp",
+          "line": 74
+        }
+      ]
+    }
+  ]
+}

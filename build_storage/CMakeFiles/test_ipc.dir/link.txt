@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_ipc.dir/tests/test_ipc.cpp.o -o test_ipc  lib/libgtest_main.a lib/libgtest.a

@@ -1,0 +1,5 @@
+if(EXISTS "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_orderbook_risk[1]_tests.cmake")
+  include("/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_orderbook_risk[1]_tests.cmake")
+else()
+  add_test(test_orderbook_risk_NOT_BUILT test_orderbook_risk_NOT_BUILT)
+endif()

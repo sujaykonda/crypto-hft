@@ -1,6 +1,12 @@
 /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/hft_storage.dir
+/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/hft_exchange.dir
 /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/hft_platform.dir
 /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/test_storage.dir
+/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/test_strategy_runtime.dir
+/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/test_exchange_api.dir
+/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/test_backtest.dir
+/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/test_orderbook_risk.dir
+/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/test_ipc.dir
 /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/test.dir
 /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/edit_cache.dir
 /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/rebuild_cache.dir

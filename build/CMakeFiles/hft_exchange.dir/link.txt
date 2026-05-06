@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhft_exchange.a CMakeFiles/hft_exchange.dir/src/exchange/market_data_client.cpp.o
+/usr/bin/ranlib libhft_exchange.a

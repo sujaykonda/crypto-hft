@@ -1,0 +1,38 @@
+{
+  "tests": 4,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "CryptoComAuth",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "ParameterStringUsesSortedKeysAndNestedArrays",
+          "file": "\/Users\/sujaykonda\/Downloads\/crypto_hft\/tests\/test_exchange_api.cpp",
+          "line": 20
+        },
+        {
+          "name": "SignatureMatchesDocumentedPayloadAlgorithm",
+          "file": "\/Users\/sujaykonda\/Downloads\/crypto_hft\/tests\/test_exchange_api.cpp",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "name": "CryptoComParser",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "ParsesMarketTradeAndBookSnapshotMessages",
+          "file": "\/Users\/sujaykonda\/Downloads\/crypto_hft\/tests\/test_exchange_api.cpp",
+          "line": 53
+        },
+        {
+          "name": "ParsesUserOrderSubscriptionUpdate",
+          "file": "\/Users\/sujaykonda\/Downloads\/crypto_hft\/tests\/test_exchange_api.cpp",
+          "line": 121
+        }
+      ]
+    }
+  ]
+}

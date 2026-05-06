@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Build the live trading executable
+BUILD_PLATFORM:BOOL=ON
+
 //Build test executables
 BUILD_TESTS:BOOL=OFF
 

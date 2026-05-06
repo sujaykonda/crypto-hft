@@ -91,7 +91,7 @@ json build_subscribe_message(const std::vector<std::string>& instruments, int bo
     return {
         {"id", 1},
         {"method", "subscribe"},
-        {"params", {{"channels", std::move(channels)}}},
+        {"params", {{"channels", std::move(channels)}, {"book_subscription_type", "SNAPSHOT"}}},
     };
 }
 
@@ -217,7 +217,7 @@ void CryptoComMarketDataClient::run() {
                 continue;
             }
 
-            handle_message(message);
+            process_text_message(message);
         }
 
         beast::error_code close_ec;
@@ -231,7 +231,7 @@ void CryptoComMarketDataClient::run() {
     running_.store(false, std::memory_order_release);
 }
 
-void CryptoComMarketDataClient::handle_message(const std::string& message) {
+void CryptoComMarketDataClient::process_text_message(const std::string& message) {
     const json decoded = json::parse(message, nullptr, false);
     if (decoded.is_discarded() || !decoded.contains("result") || !decoded["result"].is_object()) {
         return;
@@ -266,7 +266,10 @@ void CryptoComMarketDataClient::handle_trade_result(const nlohmann::json& result
         trade.price = price;
         trade.quantity = quantity;
         trade.is_buyer_maker = item.value("s", "") == "SELL";
-        trade.timestamp_ns = exchange_time_to_ns(item.contains("t") ? as_u64(item["t"]) : 0);
+        const uint64_t raw_time = item.contains("tn") ? as_u64(item["tn"])
+                                  : item.contains("t") ? as_u64(item["t"])
+                                                       : 0;
+        trade.timestamp_ns = exchange_time_to_ns(raw_time);
         trade.trade_id = item.contains("d") ? as_u64(item["d"]) : 0;
 
         if (on_trade_) {

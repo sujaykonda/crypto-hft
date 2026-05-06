@@ -162,6 +162,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named hft_storage
+
+# Build rule for target.
+hft_storage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hft_storage
+.PHONY : hft_storage
+
+# fast build rule for target.
+hft_storage/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/build
+.PHONY : hft_storage/fast
+
+#=============================================================================
+# Target rules for targets named hft_exchange
+
+# Build rule for target.
+hft_exchange: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hft_exchange
+.PHONY : hft_exchange
+
+# fast build rule for target.
+hft_exchange/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_exchange.dir/build.make CMakeFiles/hft_exchange.dir/build
+.PHONY : hft_exchange/fast
+
+#=============================================================================
 # Target rules for targets named hft_platform
 
 # Build rule for target.
@@ -173,6 +199,30 @@ hft_platform: cmake_check_build_system
 hft_platform/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_platform.dir/build.make CMakeFiles/hft_platform.dir/build
 .PHONY : hft_platform/fast
+
+src/exchange/market_data_client.o: src/exchange/market_data_client.cpp.o
+.PHONY : src/exchange/market_data_client.o
+
+# target to build an object file
+src/exchange/market_data_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_exchange.dir/build.make CMakeFiles/hft_exchange.dir/src/exchange/market_data_client.cpp.o
+.PHONY : src/exchange/market_data_client.cpp.o
+
+src/exchange/market_data_client.i: src/exchange/market_data_client.cpp.i
+.PHONY : src/exchange/market_data_client.i
+
+# target to preprocess a source file
+src/exchange/market_data_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_exchange.dir/build.make CMakeFiles/hft_exchange.dir/src/exchange/market_data_client.cpp.i
+.PHONY : src/exchange/market_data_client.cpp.i
+
+src/exchange/market_data_client.s: src/exchange/market_data_client.cpp.s
+.PHONY : src/exchange/market_data_client.s
+
+# target to generate assembly for a file
+src/exchange/market_data_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_exchange.dir/build.make CMakeFiles/hft_exchange.dir/src/exchange/market_data_client.cpp.s
+.PHONY : src/exchange/market_data_client.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -198,6 +248,78 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_platform.dir/build.make CMakeFiles/hft_platform.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/storage/in_memory_storage.o: src/storage/in_memory_storage.cpp.o
+.PHONY : src/storage/in_memory_storage.o
+
+# target to build an object file
+src/storage/in_memory_storage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/in_memory_storage.cpp.o
+.PHONY : src/storage/in_memory_storage.cpp.o
+
+src/storage/in_memory_storage.i: src/storage/in_memory_storage.cpp.i
+.PHONY : src/storage/in_memory_storage.i
+
+# target to preprocess a source file
+src/storage/in_memory_storage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/in_memory_storage.cpp.i
+.PHONY : src/storage/in_memory_storage.cpp.i
+
+src/storage/in_memory_storage.s: src/storage/in_memory_storage.cpp.s
+.PHONY : src/storage/in_memory_storage.s
+
+# target to generate assembly for a file
+src/storage/in_memory_storage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/in_memory_storage.cpp.s
+.PHONY : src/storage/in_memory_storage.cpp.s
+
+src/storage/jsonl_async_storage.o: src/storage/jsonl_async_storage.cpp.o
+.PHONY : src/storage/jsonl_async_storage.o
+
+# target to build an object file
+src/storage/jsonl_async_storage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/jsonl_async_storage.cpp.o
+.PHONY : src/storage/jsonl_async_storage.cpp.o
+
+src/storage/jsonl_async_storage.i: src/storage/jsonl_async_storage.cpp.i
+.PHONY : src/storage/jsonl_async_storage.i
+
+# target to preprocess a source file
+src/storage/jsonl_async_storage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/jsonl_async_storage.cpp.i
+.PHONY : src/storage/jsonl_async_storage.cpp.i
+
+src/storage/jsonl_async_storage.s: src/storage/jsonl_async_storage.cpp.s
+.PHONY : src/storage/jsonl_async_storage.s
+
+# target to generate assembly for a file
+src/storage/jsonl_async_storage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/jsonl_async_storage.cpp.s
+.PHONY : src/storage/jsonl_async_storage.cpp.s
+
+src/storage/storage_types.o: src/storage/storage_types.cpp.o
+.PHONY : src/storage/storage_types.o
+
+# target to build an object file
+src/storage/storage_types.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/storage_types.cpp.o
+.PHONY : src/storage/storage_types.cpp.o
+
+src/storage/storage_types.i: src/storage/storage_types.cpp.i
+.PHONY : src/storage/storage_types.i
+
+# target to preprocess a source file
+src/storage/storage_types.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/storage_types.cpp.i
+.PHONY : src/storage/storage_types.cpp.i
+
+src/storage/storage_types.s: src/storage/storage_types.cpp.s
+.PHONY : src/storage/storage_types.s
+
+# target to generate assembly for a file
+src/storage/storage_types.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/storage_types.cpp.s
+.PHONY : src/storage/storage_types.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -210,10 +332,24 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... hft_exchange"
 	@echo "... hft_platform"
+	@echo "... hft_storage"
+	@echo "... src/exchange/market_data_client.o"
+	@echo "... src/exchange/market_data_client.i"
+	@echo "... src/exchange/market_data_client.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/storage/in_memory_storage.o"
+	@echo "... src/storage/in_memory_storage.i"
+	@echo "... src/storage/in_memory_storage.s"
+	@echo "... src/storage/jsonl_async_storage.o"
+	@echo "... src/storage/jsonl_async_storage.i"
+	@echo "... src/storage/jsonl_async_storage.s"
+	@echo "... src/storage/storage_types.o"
+	@echo "... src/storage/storage_types.i"
+	@echo "... src/storage/storage_types.s"
 .PHONY : help
 
 

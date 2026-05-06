@@ -1,7 +1,9 @@
 CMakeFiles/hft_platform.dir/src/main.cpp.o: \
   /Users/sujaykonda/Downloads/crypto_hft/src/main.cpp \
-  /Users/sujaykonda/Downloads/crypto_hft/include/core/order_executor.hpp \
-  /Users/sujaykonda/Downloads/crypto_hft/include/core/trade_queue.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/backtest/backtest_replay_driver.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/backtest/simulated_execution_sink.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/storage/storage_interface.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/storage/storage_types.hpp \
   /Users/sujaykonda/Downloads/crypto_hft/include/types/trade.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdint \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -962,6 +964,10 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/from_chars_integral.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/from_chars_result.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars.h \
+  /Users/sujaykonda/Downloads/crypto_hft/include/strategy/execution_sink.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/strategy/strategy_base.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/core/order_executor.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/core/trade_queue.hpp \
   /Users/sujaykonda/Downloads/crypto_hft/include/exchange/websocket_client.hpp \
   /Users/sujaykonda/Downloads/crypto_hft/include/exchange/crypto_com_api.hpp \
   /Users/sujaykonda/Downloads/crypto_hft/include/exchange/auth_handler.hpp \
@@ -2181,4 +2187,9 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/condition_variable \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_callback.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
-  /Users/sujaykonda/Downloads/crypto_hft/include/strategy/strategy_base.hpp
+  /Users/sujaykonda/Downloads/crypto_hft/include/exchange/market_data_client.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/risk/risk_manager.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/storage/jsonl_async_storage.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
+  /Users/sujaykonda/Downloads/crypto_hft/include/strategy/example_strategies.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/strategy/live_order_executor_sink.hpp

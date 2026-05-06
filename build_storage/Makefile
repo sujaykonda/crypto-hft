@@ -185,6 +185,19 @@ hft_storage/fast:
 .PHONY : hft_storage/fast
 
 #=============================================================================
+# Target rules for targets named hft_exchange
+
+# Build rule for target.
+hft_exchange: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hft_exchange
+.PHONY : hft_exchange
+
+# fast build rule for target.
+hft_exchange/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_exchange.dir/build.make CMakeFiles/hft_exchange.dir/build
+.PHONY : hft_exchange/fast
+
+#=============================================================================
 # Target rules for targets named hft_platform
 
 # Build rule for target.
@@ -209,6 +222,71 @@ test_storage: cmake_check_build_system
 test_storage/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_storage.dir/build.make CMakeFiles/test_storage.dir/build
 .PHONY : test_storage/fast
+
+#=============================================================================
+# Target rules for targets named test_strategy_runtime
+
+# Build rule for target.
+test_strategy_runtime: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_strategy_runtime
+.PHONY : test_strategy_runtime
+
+# fast build rule for target.
+test_strategy_runtime/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_strategy_runtime.dir/build.make CMakeFiles/test_strategy_runtime.dir/build
+.PHONY : test_strategy_runtime/fast
+
+#=============================================================================
+# Target rules for targets named test_exchange_api
+
+# Build rule for target.
+test_exchange_api: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_exchange_api
+.PHONY : test_exchange_api
+
+# fast build rule for target.
+test_exchange_api/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_exchange_api.dir/build.make CMakeFiles/test_exchange_api.dir/build
+.PHONY : test_exchange_api/fast
+
+#=============================================================================
+# Target rules for targets named test_backtest
+
+# Build rule for target.
+test_backtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_backtest
+.PHONY : test_backtest
+
+# fast build rule for target.
+test_backtest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_backtest.dir/build.make CMakeFiles/test_backtest.dir/build
+.PHONY : test_backtest/fast
+
+#=============================================================================
+# Target rules for targets named test_orderbook_risk
+
+# Build rule for target.
+test_orderbook_risk: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_orderbook_risk
+.PHONY : test_orderbook_risk
+
+# fast build rule for target.
+test_orderbook_risk/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_orderbook_risk.dir/build.make CMakeFiles/test_orderbook_risk.dir/build
+.PHONY : test_orderbook_risk/fast
+
+#=============================================================================
+# Target rules for targets named test_ipc
+
+# Build rule for target.
+test_ipc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_ipc
+.PHONY : test_ipc
+
+# fast build rule for target.
+test_ipc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ipc.dir/build.make CMakeFiles/test_ipc.dir/build
+.PHONY : test_ipc/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -261,6 +339,30 @@ gtest_main: cmake_check_build_system
 gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
+
+src/exchange/market_data_client.o: src/exchange/market_data_client.cpp.o
+.PHONY : src/exchange/market_data_client.o
+
+# target to build an object file
+src/exchange/market_data_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_exchange.dir/build.make CMakeFiles/hft_exchange.dir/src/exchange/market_data_client.cpp.o
+.PHONY : src/exchange/market_data_client.cpp.o
+
+src/exchange/market_data_client.i: src/exchange/market_data_client.cpp.i
+.PHONY : src/exchange/market_data_client.i
+
+# target to preprocess a source file
+src/exchange/market_data_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_exchange.dir/build.make CMakeFiles/hft_exchange.dir/src/exchange/market_data_client.cpp.i
+.PHONY : src/exchange/market_data_client.cpp.i
+
+src/exchange/market_data_client.s: src/exchange/market_data_client.cpp.s
+.PHONY : src/exchange/market_data_client.s
+
+# target to generate assembly for a file
+src/exchange/market_data_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_exchange.dir/build.make CMakeFiles/hft_exchange.dir/src/exchange/market_data_client.cpp.s
+.PHONY : src/exchange/market_data_client.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -358,6 +460,102 @@ src/storage/storage_types.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_storage.dir/build.make CMakeFiles/hft_storage.dir/src/storage/storage_types.cpp.s
 .PHONY : src/storage/storage_types.cpp.s
 
+tests/test_backtest.o: tests/test_backtest.cpp.o
+.PHONY : tests/test_backtest.o
+
+# target to build an object file
+tests/test_backtest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_backtest.dir/build.make CMakeFiles/test_backtest.dir/tests/test_backtest.cpp.o
+.PHONY : tests/test_backtest.cpp.o
+
+tests/test_backtest.i: tests/test_backtest.cpp.i
+.PHONY : tests/test_backtest.i
+
+# target to preprocess a source file
+tests/test_backtest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_backtest.dir/build.make CMakeFiles/test_backtest.dir/tests/test_backtest.cpp.i
+.PHONY : tests/test_backtest.cpp.i
+
+tests/test_backtest.s: tests/test_backtest.cpp.s
+.PHONY : tests/test_backtest.s
+
+# target to generate assembly for a file
+tests/test_backtest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_backtest.dir/build.make CMakeFiles/test_backtest.dir/tests/test_backtest.cpp.s
+.PHONY : tests/test_backtest.cpp.s
+
+tests/test_exchange_api.o: tests/test_exchange_api.cpp.o
+.PHONY : tests/test_exchange_api.o
+
+# target to build an object file
+tests/test_exchange_api.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_exchange_api.dir/build.make CMakeFiles/test_exchange_api.dir/tests/test_exchange_api.cpp.o
+.PHONY : tests/test_exchange_api.cpp.o
+
+tests/test_exchange_api.i: tests/test_exchange_api.cpp.i
+.PHONY : tests/test_exchange_api.i
+
+# target to preprocess a source file
+tests/test_exchange_api.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_exchange_api.dir/build.make CMakeFiles/test_exchange_api.dir/tests/test_exchange_api.cpp.i
+.PHONY : tests/test_exchange_api.cpp.i
+
+tests/test_exchange_api.s: tests/test_exchange_api.cpp.s
+.PHONY : tests/test_exchange_api.s
+
+# target to generate assembly for a file
+tests/test_exchange_api.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_exchange_api.dir/build.make CMakeFiles/test_exchange_api.dir/tests/test_exchange_api.cpp.s
+.PHONY : tests/test_exchange_api.cpp.s
+
+tests/test_ipc.o: tests/test_ipc.cpp.o
+.PHONY : tests/test_ipc.o
+
+# target to build an object file
+tests/test_ipc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ipc.dir/build.make CMakeFiles/test_ipc.dir/tests/test_ipc.cpp.o
+.PHONY : tests/test_ipc.cpp.o
+
+tests/test_ipc.i: tests/test_ipc.cpp.i
+.PHONY : tests/test_ipc.i
+
+# target to preprocess a source file
+tests/test_ipc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ipc.dir/build.make CMakeFiles/test_ipc.dir/tests/test_ipc.cpp.i
+.PHONY : tests/test_ipc.cpp.i
+
+tests/test_ipc.s: tests/test_ipc.cpp.s
+.PHONY : tests/test_ipc.s
+
+# target to generate assembly for a file
+tests/test_ipc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ipc.dir/build.make CMakeFiles/test_ipc.dir/tests/test_ipc.cpp.s
+.PHONY : tests/test_ipc.cpp.s
+
+tests/test_orderbook_risk.o: tests/test_orderbook_risk.cpp.o
+.PHONY : tests/test_orderbook_risk.o
+
+# target to build an object file
+tests/test_orderbook_risk.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_orderbook_risk.dir/build.make CMakeFiles/test_orderbook_risk.dir/tests/test_orderbook_risk.cpp.o
+.PHONY : tests/test_orderbook_risk.cpp.o
+
+tests/test_orderbook_risk.i: tests/test_orderbook_risk.cpp.i
+.PHONY : tests/test_orderbook_risk.i
+
+# target to preprocess a source file
+tests/test_orderbook_risk.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_orderbook_risk.dir/build.make CMakeFiles/test_orderbook_risk.dir/tests/test_orderbook_risk.cpp.i
+.PHONY : tests/test_orderbook_risk.cpp.i
+
+tests/test_orderbook_risk.s: tests/test_orderbook_risk.cpp.s
+.PHONY : tests/test_orderbook_risk.s
+
+# target to generate assembly for a file
+tests/test_orderbook_risk.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_orderbook_risk.dir/build.make CMakeFiles/test_orderbook_risk.dir/tests/test_orderbook_risk.cpp.s
+.PHONY : tests/test_orderbook_risk.cpp.s
+
 tests/test_storage.o: tests/test_storage.cpp.o
 .PHONY : tests/test_storage.o
 
@@ -382,6 +580,30 @@ tests/test_storage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_storage.dir/build.make CMakeFiles/test_storage.dir/tests/test_storage.cpp.s
 .PHONY : tests/test_storage.cpp.s
 
+tests/test_strategy_runtime.o: tests/test_strategy_runtime.cpp.o
+.PHONY : tests/test_strategy_runtime.o
+
+# target to build an object file
+tests/test_strategy_runtime.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_strategy_runtime.dir/build.make CMakeFiles/test_strategy_runtime.dir/tests/test_strategy_runtime.cpp.o
+.PHONY : tests/test_strategy_runtime.cpp.o
+
+tests/test_strategy_runtime.i: tests/test_strategy_runtime.cpp.i
+.PHONY : tests/test_strategy_runtime.i
+
+# target to preprocess a source file
+tests/test_strategy_runtime.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_strategy_runtime.dir/build.make CMakeFiles/test_strategy_runtime.dir/tests/test_strategy_runtime.cpp.i
+.PHONY : tests/test_strategy_runtime.cpp.i
+
+tests/test_strategy_runtime.s: tests/test_strategy_runtime.cpp.s
+.PHONY : tests/test_strategy_runtime.s
+
+# target to generate assembly for a file
+tests/test_strategy_runtime.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_strategy_runtime.dir/build.make CMakeFiles/test_strategy_runtime.dir/tests/test_strategy_runtime.cpp.s
+.PHONY : tests/test_strategy_runtime.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -399,9 +621,18 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... hft_exchange"
 	@echo "... hft_platform"
 	@echo "... hft_storage"
+	@echo "... test_backtest"
+	@echo "... test_exchange_api"
+	@echo "... test_ipc"
+	@echo "... test_orderbook_risk"
 	@echo "... test_storage"
+	@echo "... test_strategy_runtime"
+	@echo "... src/exchange/market_data_client.o"
+	@echo "... src/exchange/market_data_client.i"
+	@echo "... src/exchange/market_data_client.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -414,9 +645,24 @@ help:
 	@echo "... src/storage/storage_types.o"
 	@echo "... src/storage/storage_types.i"
 	@echo "... src/storage/storage_types.s"
+	@echo "... tests/test_backtest.o"
+	@echo "... tests/test_backtest.i"
+	@echo "... tests/test_backtest.s"
+	@echo "... tests/test_exchange_api.o"
+	@echo "... tests/test_exchange_api.i"
+	@echo "... tests/test_exchange_api.s"
+	@echo "... tests/test_ipc.o"
+	@echo "... tests/test_ipc.i"
+	@echo "... tests/test_ipc.s"
+	@echo "... tests/test_orderbook_risk.o"
+	@echo "... tests/test_orderbook_risk.i"
+	@echo "... tests/test_orderbook_risk.s"
 	@echo "... tests/test_storage.o"
 	@echo "... tests/test_storage.i"
 	@echo "... tests/test_storage.s"
+	@echo "... tests/test_strategy_runtime.o"
+	@echo "... tests/test_strategy_runtime.i"
+	@echo "... tests/test_strategy_runtime.s"
 .PHONY : help
 
 

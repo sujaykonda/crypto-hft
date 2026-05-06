@@ -17,6 +17,9 @@
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
 
+//Build the live trading executable
+BUILD_PLATFORM:BOOL=ON
+
 //Build test executables
 BUILD_TESTS:BOOL=ON
 

@@ -1,10 +1,10 @@
-Start testing: Mar 11 17:15 EDT
+Start testing: May 06 17:58 EDT
 ----------------------------------------------------------
-1/7 Testing: StorageInterface.InMemoryRoundTrip
-1/7 Test: StorageInterface.InMemoryRoundTrip
+1/25 Testing: StorageInterface.InMemoryRoundTrip
+1/25 Test: StorageInterface.InMemoryRoundTrip
 Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=StorageInterface.InMemoryRoundTrip" "--gtest_also_run_disabled_tests"
 Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
-"StorageInterface.InMemoryRoundTrip" start time: Mar 11 17:15 EDT
+"StorageInterface.InMemoryRoundTrip" start time: May 06 17:58 EDT
 Output:
 ----------------------------------------------------------
 Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -23,15 +23,15 @@ Note: Google Test filter = StorageInterface.InMemoryRoundTrip
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"StorageInterface.InMemoryRoundTrip" end time: Mar 11 17:15 EDT
+"StorageInterface.InMemoryRoundTrip" end time: May 06 17:58 EDT
 "StorageInterface.InMemoryRoundTrip" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/7 Testing: StorageInterface.ReplayFilters
-2/7 Test: StorageInterface.ReplayFilters
+2/25 Testing: StorageInterface.ReplayFilters
+2/25 Test: StorageInterface.ReplayFilters
 Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=StorageInterface.ReplayFilters" "--gtest_also_run_disabled_tests"
 Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
-"StorageInterface.ReplayFilters" start time: Mar 11 17:15 EDT
+"StorageInterface.ReplayFilters" start time: May 06 17:58 EDT
 Output:
 ----------------------------------------------------------
 Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -47,18 +47,18 @@ Note: Google Test filter = StorageInterface.ReplayFilters
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.00 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"StorageInterface.ReplayFilters" end time: Mar 11 17:15 EDT
+"StorageInterface.ReplayFilters" end time: May 06 17:58 EDT
 "StorageInterface.ReplayFilters" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/7 Testing: StorageInterface.MonotonicOffsetsMultiProducer
-3/7 Test: StorageInterface.MonotonicOffsetsMultiProducer
+3/25 Testing: StorageInterface.MonotonicOffsetsMultiProducer
+3/25 Test: StorageInterface.MonotonicOffsetsMultiProducer
 Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=StorageInterface.MonotonicOffsetsMultiProducer" "--gtest_also_run_disabled_tests"
 Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
-"StorageInterface.MonotonicOffsetsMultiProducer" start time: Mar 11 17:15 EDT
+"StorageInterface.MonotonicOffsetsMultiProducer" start time: May 06 17:58 EDT
 Output:
 ----------------------------------------------------------
 Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -74,18 +74,18 @@ Note: Google Test filter = StorageInterface.MonotonicOffsetsMultiProducer
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.00 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"StorageInterface.MonotonicOffsetsMultiProducer" end time: Mar 11 17:15 EDT
+"StorageInterface.MonotonicOffsetsMultiProducer" end time: May 06 17:58 EDT
 "StorageInterface.MonotonicOffsetsMultiProducer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/7 Testing: JsonlAsync.Backpressure
-4/7 Test: JsonlAsync.Backpressure
+4/25 Testing: JsonlAsync.Backpressure
+4/25 Test: JsonlAsync.Backpressure
 Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=JsonlAsync.Backpressure" "--gtest_also_run_disabled_tests"
 Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
-"JsonlAsync.Backpressure" start time: Mar 11 17:15 EDT
+"JsonlAsync.Backpressure" start time: May 06 17:58 EDT
 Output:
 ----------------------------------------------------------
 Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -104,15 +104,15 @@ Note: Google Test filter = JsonlAsync.Backpressure
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"JsonlAsync.Backpressure" end time: Mar 11 17:15 EDT
+"JsonlAsync.Backpressure" end time: May 06 17:58 EDT
 "JsonlAsync.Backpressure" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/7 Testing: JsonlAsync.FlushAndDurability
-5/7 Test: JsonlAsync.FlushAndDurability
+5/25 Testing: JsonlAsync.FlushAndDurability
+5/25 Test: JsonlAsync.FlushAndDurability
 Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=JsonlAsync.FlushAndDurability" "--gtest_also_run_disabled_tests"
 Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
-"JsonlAsync.FlushAndDurability" start time: Mar 11 17:15 EDT
+"JsonlAsync.FlushAndDurability" start time: May 06 17:58 EDT
 Output:
 ----------------------------------------------------------
 Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -131,15 +131,15 @@ Note: Google Test filter = JsonlAsync.FlushAndDurability
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"JsonlAsync.FlushAndDurability" end time: Mar 11 17:15 EDT
+"JsonlAsync.FlushAndDurability" end time: May 06 17:58 EDT
 "JsonlAsync.FlushAndDurability" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/7 Testing: JsonlAsync.CloseBehavior
-6/7 Test: JsonlAsync.CloseBehavior
+6/25 Testing: JsonlAsync.CloseBehavior
+6/25 Test: JsonlAsync.CloseBehavior
 Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=JsonlAsync.CloseBehavior" "--gtest_also_run_disabled_tests"
 Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
-"JsonlAsync.CloseBehavior" start time: Mar 11 17:15 EDT
+"JsonlAsync.CloseBehavior" start time: May 06 17:58 EDT
 Output:
 ----------------------------------------------------------
 Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -158,15 +158,15 @@ Note: Google Test filter = JsonlAsync.CloseBehavior
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"JsonlAsync.CloseBehavior" end time: Mar 11 17:15 EDT
+"JsonlAsync.CloseBehavior" end time: May 06 17:58 EDT
 "JsonlAsync.CloseBehavior" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-7/7 Testing: JsonlAsync.MalformedLineRecovery
-7/7 Test: JsonlAsync.MalformedLineRecovery
+7/25 Testing: JsonlAsync.MalformedLineRecovery
+7/25 Test: JsonlAsync.MalformedLineRecovery
 Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_storage" "--gtest_filter=JsonlAsync.MalformedLineRecovery" "--gtest_also_run_disabled_tests"
 Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
-"JsonlAsync.MalformedLineRecovery" start time: Mar 11 17:15 EDT
+"JsonlAsync.MalformedLineRecovery" start time: May 06 17:58 EDT
 Output:
 ----------------------------------------------------------
 Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -185,8 +185,494 @@ Note: Google Test filter = JsonlAsync.MalformedLineRecovery
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"JsonlAsync.MalformedLineRecovery" end time: Mar 11 17:15 EDT
+"JsonlAsync.MalformedLineRecovery" end time: May 06 17:58 EDT
 "JsonlAsync.MalformedLineRecovery" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Mar 11 17:15 EDT
+8/25 Testing: StrategyRuntime.StrategyBaseOrderHelpersUseExecutionSink
+8/25 Test: StrategyRuntime.StrategyBaseOrderHelpersUseExecutionSink
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_strategy_runtime" "--gtest_filter=StrategyRuntime.StrategyBaseOrderHelpersUseExecutionSink" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"StrategyRuntime.StrategyBaseOrderHelpersUseExecutionSink" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = StrategyRuntime.StrategyBaseOrderHelpersUseExecutionSink
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StrategyRuntime
+[ RUN      ] StrategyRuntime.StrategyBaseOrderHelpersUseExecutionSink
+[       OK ] StrategyRuntime.StrategyBaseOrderHelpersUseExecutionSink (0 ms)
+[----------] 1 test from StrategyRuntime (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StrategyRuntime.StrategyBaseOrderHelpersUseExecutionSink" end time: May 06 17:58 EDT
+"StrategyRuntime.StrategyBaseOrderHelpersUseExecutionSink" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/25 Testing: StrategyRuntime.StrategyManagerFiltersByTickerAndActivity
+9/25 Test: StrategyRuntime.StrategyManagerFiltersByTickerAndActivity
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_strategy_runtime" "--gtest_filter=StrategyRuntime.StrategyManagerFiltersByTickerAndActivity" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"StrategyRuntime.StrategyManagerFiltersByTickerAndActivity" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = StrategyRuntime.StrategyManagerFiltersByTickerAndActivity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StrategyRuntime
+[ RUN      ] StrategyRuntime.StrategyManagerFiltersByTickerAndActivity
+[       OK ] StrategyRuntime.StrategyManagerFiltersByTickerAndActivity (0 ms)
+[----------] 1 test from StrategyRuntime (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StrategyRuntime.StrategyManagerFiltersByTickerAndActivity" end time: May 06 17:58 EDT
+"StrategyRuntime.StrategyManagerFiltersByTickerAndActivity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/25 Testing: StrategyRuntime.LiveDispatchPersistsMarketEventsExactlyOnce
+10/25 Test: StrategyRuntime.LiveDispatchPersistsMarketEventsExactlyOnce
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_strategy_runtime" "--gtest_filter=StrategyRuntime.LiveDispatchPersistsMarketEventsExactlyOnce" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"StrategyRuntime.LiveDispatchPersistsMarketEventsExactlyOnce" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = StrategyRuntime.LiveDispatchPersistsMarketEventsExactlyOnce
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StrategyRuntime
+[ RUN      ] StrategyRuntime.LiveDispatchPersistsMarketEventsExactlyOnce
+[       OK ] StrategyRuntime.LiveDispatchPersistsMarketEventsExactlyOnce (0 ms)
+[----------] 1 test from StrategyRuntime (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StrategyRuntime.LiveDispatchPersistsMarketEventsExactlyOnce" end time: May 06 17:58 EDT
+"StrategyRuntime.LiveDispatchPersistsMarketEventsExactlyOnce" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/25 Testing: StrategyRuntime.LiveExecutionSinkRecordsSubmissionsAndResponses
+11/25 Test: StrategyRuntime.LiveExecutionSinkRecordsSubmissionsAndResponses
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_strategy_runtime" "--gtest_filter=StrategyRuntime.LiveExecutionSinkRecordsSubmissionsAndResponses" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"StrategyRuntime.LiveExecutionSinkRecordsSubmissionsAndResponses" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = StrategyRuntime.LiveExecutionSinkRecordsSubmissionsAndResponses
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StrategyRuntime
+[ RUN      ] StrategyRuntime.LiveExecutionSinkRecordsSubmissionsAndResponses
+[       OK ] StrategyRuntime.LiveExecutionSinkRecordsSubmissionsAndResponses (0 ms)
+[----------] 1 test from StrategyRuntime (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StrategyRuntime.LiveExecutionSinkRecordsSubmissionsAndResponses" end time: May 06 17:58 EDT
+"StrategyRuntime.LiveExecutionSinkRecordsSubmissionsAndResponses" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/25 Testing: StrategyRuntime.StorageAppendFailuresAreSurfacedWithoutBlockingDispatch
+12/25 Test: StrategyRuntime.StorageAppendFailuresAreSurfacedWithoutBlockingDispatch
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_strategy_runtime" "--gtest_filter=StrategyRuntime.StorageAppendFailuresAreSurfacedWithoutBlockingDispatch" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"StrategyRuntime.StorageAppendFailuresAreSurfacedWithoutBlockingDispatch" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = StrategyRuntime.StorageAppendFailuresAreSurfacedWithoutBlockingDispatch
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StrategyRuntime
+[ RUN      ] StrategyRuntime.StorageAppendFailuresAreSurfacedWithoutBlockingDispatch
+[       OK ] StrategyRuntime.StorageAppendFailuresAreSurfacedWithoutBlockingDispatch (0 ms)
+[----------] 1 test from StrategyRuntime (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StrategyRuntime.StorageAppendFailuresAreSurfacedWithoutBlockingDispatch" end time: May 06 17:58 EDT
+"StrategyRuntime.StorageAppendFailuresAreSurfacedWithoutBlockingDispatch" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/25 Testing: StrategyRuntime.ReplayDriverRoutesResponsesAndDoesNotRewriteStorage
+13/25 Test: StrategyRuntime.ReplayDriverRoutesResponsesAndDoesNotRewriteStorage
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_strategy_runtime" "--gtest_filter=StrategyRuntime.ReplayDriverRoutesResponsesAndDoesNotRewriteStorage" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"StrategyRuntime.ReplayDriverRoutesResponsesAndDoesNotRewriteStorage" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = StrategyRuntime.ReplayDriverRoutesResponsesAndDoesNotRewriteStorage
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StrategyRuntime
+[ RUN      ] StrategyRuntime.ReplayDriverRoutesResponsesAndDoesNotRewriteStorage
+[       OK ] StrategyRuntime.ReplayDriverRoutesResponsesAndDoesNotRewriteStorage (0 ms)
+[----------] 1 test from StrategyRuntime (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StrategyRuntime.ReplayDriverRoutesResponsesAndDoesNotRewriteStorage" end time: May 06 17:58 EDT
+"StrategyRuntime.ReplayDriverRoutesResponsesAndDoesNotRewriteStorage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/25 Testing: CryptoComAuth.ParameterStringUsesSortedKeysAndNestedArrays
+14/25 Test: CryptoComAuth.ParameterStringUsesSortedKeysAndNestedArrays
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_exchange_api" "--gtest_filter=CryptoComAuth.ParameterStringUsesSortedKeysAndNestedArrays" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"CryptoComAuth.ParameterStringUsesSortedKeysAndNestedArrays" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CryptoComAuth.ParameterStringUsesSortedKeysAndNestedArrays
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CryptoComAuth
+[ RUN      ] CryptoComAuth.ParameterStringUsesSortedKeysAndNestedArrays
+[       OK ] CryptoComAuth.ParameterStringUsesSortedKeysAndNestedArrays (0 ms)
+[----------] 1 test from CryptoComAuth (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CryptoComAuth.ParameterStringUsesSortedKeysAndNestedArrays" end time: May 06 17:58 EDT
+"CryptoComAuth.ParameterStringUsesSortedKeysAndNestedArrays" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/25 Testing: CryptoComAuth.SignatureMatchesDocumentedPayloadAlgorithm
+15/25 Test: CryptoComAuth.SignatureMatchesDocumentedPayloadAlgorithm
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_exchange_api" "--gtest_filter=CryptoComAuth.SignatureMatchesDocumentedPayloadAlgorithm" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"CryptoComAuth.SignatureMatchesDocumentedPayloadAlgorithm" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CryptoComAuth.SignatureMatchesDocumentedPayloadAlgorithm
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CryptoComAuth
+[ RUN      ] CryptoComAuth.SignatureMatchesDocumentedPayloadAlgorithm
+[       OK ] CryptoComAuth.SignatureMatchesDocumentedPayloadAlgorithm (2 ms)
+[----------] 1 test from CryptoComAuth (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CryptoComAuth.SignatureMatchesDocumentedPayloadAlgorithm" end time: May 06 17:58 EDT
+"CryptoComAuth.SignatureMatchesDocumentedPayloadAlgorithm" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/25 Testing: CryptoComParser.ParsesMarketTradeAndBookSnapshotMessages
+16/25 Test: CryptoComParser.ParsesMarketTradeAndBookSnapshotMessages
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_exchange_api" "--gtest_filter=CryptoComParser.ParsesMarketTradeAndBookSnapshotMessages" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"CryptoComParser.ParsesMarketTradeAndBookSnapshotMessages" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CryptoComParser.ParsesMarketTradeAndBookSnapshotMessages
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CryptoComParser
+[ RUN      ] CryptoComParser.ParsesMarketTradeAndBookSnapshotMessages
+[       OK ] CryptoComParser.ParsesMarketTradeAndBookSnapshotMessages (0 ms)
+[----------] 1 test from CryptoComParser (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CryptoComParser.ParsesMarketTradeAndBookSnapshotMessages" end time: May 06 17:58 EDT
+"CryptoComParser.ParsesMarketTradeAndBookSnapshotMessages" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/25 Testing: CryptoComParser.ParsesUserOrderSubscriptionUpdate
+17/25 Test: CryptoComParser.ParsesUserOrderSubscriptionUpdate
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_exchange_api" "--gtest_filter=CryptoComParser.ParsesUserOrderSubscriptionUpdate" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"CryptoComParser.ParsesUserOrderSubscriptionUpdate" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CryptoComParser.ParsesUserOrderSubscriptionUpdate
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CryptoComParser
+[ RUN      ] CryptoComParser.ParsesUserOrderSubscriptionUpdate
+[       OK ] CryptoComParser.ParsesUserOrderSubscriptionUpdate (0 ms)
+[----------] 1 test from CryptoComParser (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CryptoComParser.ParsesUserOrderSubscriptionUpdate" end time: May 06 17:58 EDT
+"CryptoComParser.ParsesUserOrderSubscriptionUpdate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/25 Testing: BacktestReplay.MarketOrderFillsAgainstCurrentQuoteAndPersistsExecutionEvents
+18/25 Test: BacktestReplay.MarketOrderFillsAgainstCurrentQuoteAndPersistsExecutionEvents
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_backtest" "--gtest_filter=BacktestReplay.MarketOrderFillsAgainstCurrentQuoteAndPersistsExecutionEvents" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"BacktestReplay.MarketOrderFillsAgainstCurrentQuoteAndPersistsExecutionEvents" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BacktestReplay.MarketOrderFillsAgainstCurrentQuoteAndPersistsExecutionEvents
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BacktestReplay
+[ RUN      ] BacktestReplay.MarketOrderFillsAgainstCurrentQuoteAndPersistsExecutionEvents
+[       OK ] BacktestReplay.MarketOrderFillsAgainstCurrentQuoteAndPersistsExecutionEvents (0 ms)
+[----------] 1 test from BacktestReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BacktestReplay.MarketOrderFillsAgainstCurrentQuoteAndPersistsExecutionEvents" end time: May 06 17:58 EDT
+"BacktestReplay.MarketOrderFillsAgainstCurrentQuoteAndPersistsExecutionEvents" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/25 Testing: BacktestReplay.RestingLimitOrderFillsOnLaterMarketTrade
+19/25 Test: BacktestReplay.RestingLimitOrderFillsOnLaterMarketTrade
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_backtest" "--gtest_filter=BacktestReplay.RestingLimitOrderFillsOnLaterMarketTrade" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"BacktestReplay.RestingLimitOrderFillsOnLaterMarketTrade" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BacktestReplay.RestingLimitOrderFillsOnLaterMarketTrade
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BacktestReplay
+[ RUN      ] BacktestReplay.RestingLimitOrderFillsOnLaterMarketTrade
+[       OK ] BacktestReplay.RestingLimitOrderFillsOnLaterMarketTrade (0 ms)
+[----------] 1 test from BacktestReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BacktestReplay.RestingLimitOrderFillsOnLaterMarketTrade" end time: May 06 17:58 EDT
+"BacktestReplay.RestingLimitOrderFillsOnLaterMarketTrade" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/25 Testing: OrderBook.SnapshotDeltaAndBestQuote
+20/25 Test: OrderBook.SnapshotDeltaAndBestQuote
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_orderbook_risk" "--gtest_filter=OrderBook.SnapshotDeltaAndBestQuote" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"OrderBook.SnapshotDeltaAndBestQuote" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderBook.SnapshotDeltaAndBestQuote
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderBook
+[ RUN      ] OrderBook.SnapshotDeltaAndBestQuote
+[       OK ] OrderBook.SnapshotDeltaAndBestQuote (0 ms)
+[----------] 1 test from OrderBook (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBook.SnapshotDeltaAndBestQuote" end time: May 06 17:58 EDT
+"OrderBook.SnapshotDeltaAndBestQuote" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/25 Testing: OrderBook.MultiExchangeBookCoalescesBestBidAndAsk
+21/25 Test: OrderBook.MultiExchangeBookCoalescesBestBidAndAsk
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_orderbook_risk" "--gtest_filter=OrderBook.MultiExchangeBookCoalescesBestBidAndAsk" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"OrderBook.MultiExchangeBookCoalescesBestBidAndAsk" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderBook.MultiExchangeBookCoalescesBestBidAndAsk
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderBook
+[ RUN      ] OrderBook.MultiExchangeBookCoalescesBestBidAndAsk
+[       OK ] OrderBook.MultiExchangeBookCoalescesBestBidAndAsk (0 ms)
+[----------] 1 test from OrderBook (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBook.MultiExchangeBookCoalescesBestBidAndAsk" end time: May 06 17:58 EDT
+"OrderBook.MultiExchangeBookCoalescesBestBidAndAsk" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/25 Testing: RiskManager.RejectsOrdersThatExceedLimitsAndTracksFilledPosition
+22/25 Test: RiskManager.RejectsOrdersThatExceedLimitsAndTracksFilledPosition
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_orderbook_risk" "--gtest_filter=RiskManager.RejectsOrdersThatExceedLimitsAndTracksFilledPosition" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"RiskManager.RejectsOrdersThatExceedLimitsAndTracksFilledPosition" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RiskManager.RejectsOrdersThatExceedLimitsAndTracksFilledPosition
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RiskManager
+[ RUN      ] RiskManager.RejectsOrdersThatExceedLimitsAndTracksFilledPosition
+[       OK ] RiskManager.RejectsOrdersThatExceedLimitsAndTracksFilledPosition (0 ms)
+[----------] 1 test from RiskManager (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RiskManager.RejectsOrdersThatExceedLimitsAndTracksFilledPosition" end time: May 06 17:58 EDT
+"RiskManager.RejectsOrdersThatExceedLimitsAndTracksFilledPosition" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/25 Testing: RiskCheckedExecutionSink.BlocksRejectedOrdersAndUpdatesOnFill
+23/25 Test: RiskCheckedExecutionSink.BlocksRejectedOrdersAndUpdatesOnFill
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_orderbook_risk" "--gtest_filter=RiskCheckedExecutionSink.BlocksRejectedOrdersAndUpdatesOnFill" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"RiskCheckedExecutionSink.BlocksRejectedOrdersAndUpdatesOnFill" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RiskCheckedExecutionSink.BlocksRejectedOrdersAndUpdatesOnFill
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RiskCheckedExecutionSink
+[ RUN      ] RiskCheckedExecutionSink.BlocksRejectedOrdersAndUpdatesOnFill
+[       OK ] RiskCheckedExecutionSink.BlocksRejectedOrdersAndUpdatesOnFill (0 ms)
+[----------] 1 test from RiskCheckedExecutionSink (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RiskCheckedExecutionSink.BlocksRejectedOrdersAndUpdatesOnFill" end time: May 06 17:58 EDT
+"RiskCheckedExecutionSink.BlocksRejectedOrdersAndUpdatesOnFill" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/25 Testing: IpcProtocol.ParsesSubscribeSnapshotAndErrors
+24/25 Test: IpcProtocol.ParsesSubscribeSnapshotAndErrors
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_ipc" "--gtest_filter=IpcProtocol.ParsesSubscribeSnapshotAndErrors" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"IpcProtocol.ParsesSubscribeSnapshotAndErrors" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = IpcProtocol.ParsesSubscribeSnapshotAndErrors
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IpcProtocol
+[ RUN      ] IpcProtocol.ParsesSubscribeSnapshotAndErrors
+[       OK ] IpcProtocol.ParsesSubscribeSnapshotAndErrors (0 ms)
+[----------] 1 test from IpcProtocol (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"IpcProtocol.ParsesSubscribeSnapshotAndErrors" end time: May 06 17:58 EDT
+"IpcProtocol.ParsesSubscribeSnapshotAndErrors" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/25 Testing: UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot
+25/25 Test: UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot
+Command: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_ipc" "--gtest_filter=UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot" "--gtest_also_run_disabled_tests"
+Directory: /Users/sujaykonda/Downloads/crypto_hft/build_storage
+"UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot" start time: May 06 17:58 EDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/sujaykonda/Downloads/crypto_hft/build_storage/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UnixDomainCommandServer
+[ RUN      ] UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot
+[       OK ] UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot (0 ms)
+[----------] 1 test from UnixDomainCommandServer (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot" end time: May 06 17:58 EDT
+"UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 06 17:58 EDT

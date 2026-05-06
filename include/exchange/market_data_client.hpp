@@ -39,10 +39,10 @@ public:
     void start();
     void stop();
     bool is_running() const;
+    void process_text_message(const std::string& message);
 
 private:
     void run();
-    void handle_message(const std::string& message);
     void handle_trade_result(const nlohmann::json& result);
     void handle_book_result(const nlohmann::json& result);
     void report_error(const std::string& error);

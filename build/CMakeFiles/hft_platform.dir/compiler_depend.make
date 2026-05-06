@@ -892,6 +892,7 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/format \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
@@ -1144,7 +1145,14 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
   /Users/sujaykonda/Downloads/crypto_hft/include/core/trade_queue.hpp \
   /Users/sujaykonda/Downloads/crypto_hft/include/exchange/auth_handler.hpp \
   /Users/sujaykonda/Downloads/crypto_hft/include/exchange/crypto_com_api.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/exchange/market_data_client.hpp \
   /Users/sujaykonda/Downloads/crypto_hft/include/exchange/websocket_client.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/storage/jsonl_async_storage.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/storage/storage_interface.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/storage/storage_types.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/strategy/example_strategies.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/strategy/execution_sink.hpp \
+  /Users/sujaykonda/Downloads/crypto_hft/include/strategy/live_order_executor_sink.hpp \
   /Users/sujaykonda/Downloads/crypto_hft/include/strategy/strategy_base.hpp \
   /Users/sujaykonda/Downloads/crypto_hft/include/types/trade.hpp \
   /opt/homebrew/include/boost/asio/any_io_executor.hpp \
@@ -2379,10 +2387,6 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 
 /opt/homebrew/include/boost/type_traits/is_assignable.hpp:
 
-/opt/homebrew/include/openssl/bnerr.h:
-
-/opt/homebrew/include/boost/type_traits/is_abstract.hpp:
-
 /opt/homebrew/include/boost/type_traits/intrinsics.hpp:
 
 /opt/homebrew/include/boost/type_traits/integral_promotion.hpp:
@@ -2606,8 +2610,6 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 /opt/homebrew/include/boost/mp11/integer_sequence.hpp:
 
 /opt/homebrew/include/boost/mp11/detail/mp_void.hpp:
-
-/opt/homebrew/include/boost/mp11/detail/mp_remove_if.hpp:
 
 /opt/homebrew/include/boost/type_traits/negation.hpp:
 
@@ -2905,11 +2907,17 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 
 /opt/homebrew/include/boost/beast/websocket/detail/pmd_extension.ipp:
 
+/opt/homebrew/include/boost/beast/websocket/detail/mask.ipp:
+
+/opt/homebrew/include/boost/type_traits/rank.hpp:
+
+/opt/homebrew/include/boost/type_traits/promote.hpp:
+
+/opt/homebrew/include/boost/static_assert.hpp:
+
+/opt/homebrew/include/boost/beast/websocket/detail/impl_base.hpp:
+
 /opt/homebrew/include/boost/beast/websocket/detail/hybi13.ipp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/constructible.h:
-
-/opt/homebrew/include/boost/beast/websocket/detail/frame.hpp:
 
 /opt/homebrew/include/boost/beast/websocket/detail/decorator.hpp:
 
@@ -3048,12 +3056,6 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 /opt/homebrew/include/boost/beast/core/file_posix.hpp:
 
 /opt/homebrew/include/boost/beast/core/error.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/integral_constant.h:
-
-/opt/homebrew/include/boost/beast/core.hpp:
-
-/opt/homebrew/include/boost/beast/websocket/detail/pmd_extension.hpp:
 
 /opt/homebrew/include/boost/beast/core/detect_ssl.hpp:
 
@@ -3459,6 +3461,8 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/netinet/tcp.h:
 
+/Users/sujaykonda/Downloads/crypto_hft/include/storage/storage_types.hpp:
+
 /opt/homebrew/include/boost/beast/core/role.hpp:
 
 /opt/homebrew/include/boost/asio/detail/pop_options.hpp:
@@ -3500,6 +3504,12 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_status.h:
 
 /opt/homebrew/include/boost/asio/detail/initiation_base.hpp:
+
+/opt/homebrew/include/boost/beast/websocket/detail/pmd_extension.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/integral_constant.h:
+
+/opt/homebrew/include/boost/beast/core.hpp:
 
 /opt/homebrew/include/boost/asio/detail/impl/strand_executor_service.ipp:
 
@@ -3662,6 +3672,20 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 /opt/homebrew/include/boost/beast/core/impl/buffers_adaptor.hpp:
 
 /opt/homebrew/include/boost/asio/any_io_executor.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/fdim.h:
+
+/opt/homebrew/include/boost/asio/impl/system_context.hpp:
+
+/Users/sujaykonda/Downloads/crypto_hft/include/strategy/live_order_executor_sink.hpp:
+
+/opt/homebrew/include/boost/endian/detail/is_integral.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/memory.h:
+
+/Users/sujaykonda/Downloads/crypto_hft/include/strategy/execution_sink.hpp:
+
+/Users/sujaykonda/Downloads/crypto_hft/include/storage/jsonl_async_storage.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdint.h:
 
@@ -4197,11 +4221,13 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list:
 
+/opt/homebrew/include/boost/asio/detail/socket_option.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/bounded_iter.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/fdim.h:
-
-/opt/homebrew/include/boost/asio/impl/system_context.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/mismatch.h:
 
@@ -4805,10 +4831,6 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/generate_canonical.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/type_identity.h:
-
-/opt/homebrew/include/boost/beast/websocket/detail/hybi13.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_bounds.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h:
@@ -5013,6 +5035,10 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/hypot.h:
 
+/opt/homebrew/include/boost/mp11/detail/mp_remove_if.hpp:
+
+/Users/sujaykonda/Downloads/crypto_hft/include/storage/storage_interface.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/gamma.h:
 
 /opt/homebrew/include/boost/asio/completion_condition.hpp:
@@ -5176,10 +5202,6 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_integral.h:
-
-/opt/homebrew/include/boost/asio/detail/socket_option.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/bounded_iter.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rune_t.h:
 
@@ -5415,10 +5437,6 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 
 /Users/sujaykonda/Downloads/crypto_hft/include/types/trade.hpp:
 
-/opt/homebrew/include/boost/endian/detail/is_integral.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/memory.h:
-
 /opt/homebrew/include/boost/asio/impl/config.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/for_each_segment.h:
@@ -5460,6 +5478,10 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_args.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_time_type.h:
+
+/opt/homebrew/include/boost/beast/websocket/detail/hybi13.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/type_identity.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/function.h:
 
@@ -5601,6 +5623,10 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/remove_if.h:
 
+/opt/homebrew/include/boost/beast/websocket/detail/frame.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/constructible.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/negative_binomial_distribution.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/nth_element.h:
@@ -5637,8 +5663,6 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/unreachable_sentinel.h:
 
-/opt/homebrew/include/boost/beast/websocket/detail/mask.ipp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/sys_info.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/is_eq.h:
@@ -5664,14 +5688,6 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/common_comparison_category.h:
-
-/opt/homebrew/include/boost/type_traits/rank.hpp:
-
-/opt/homebrew/include/boost/type_traits/promote.hpp:
-
-/opt/homebrew/include/boost/static_assert.hpp:
-
-/opt/homebrew/include/boost/beast/websocket/detail/impl_base.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/parser_std_format_spec.h:
 
@@ -5824,6 +5840,8 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 /opt/homebrew/include/boost/beast/http/error.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h:
+
+/Users/sujaykonda/Downloads/crypto_hft/include/strategy/example_strategies.hpp:
 
 /opt/homebrew/include/openssl/ct.h:
 
@@ -6196,6 +6214,12 @@ CMakeFiles/hft_platform.dir/src/main.cpp.o: /Users/sujaykonda/Downloads/crypto_h
 /opt/homebrew/include/boost/beast/core/impl/basic_stream.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_copy_backward.h:
+
+/opt/homebrew/include/openssl/bnerr.h:
+
+/opt/homebrew/include/boost/type_traits/is_abstract.hpp:
+
+/Users/sujaykonda/Downloads/crypto_hft/include/exchange/market_data_client.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_mismatch.h:
 

@@ -6,7 +6,5 @@ CXX_DEFINES = -DNDEBUG
 
 CXX_INCLUDES = -I/Users/sujaykonda/Downloads/crypto_hft/include -isystem /opt/homebrew/include
 
-CXX_FLAGSarm64 = -O3 -DNDEBUG -std=c++20 -flto=thin -arch arm64 -O3 -march=native -mtune=native
-
-CXX_FLAGS = -O3 -DNDEBUG -std=c++20 -flto=thin -arch arm64 -O3 -march=native -mtune=native
+CXX_FLAGS = -O3 -DNDEBUG -std=c++20 -flto=thin -O3 -march=native -mtune=native
 

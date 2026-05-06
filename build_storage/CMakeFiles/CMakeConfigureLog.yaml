@@ -3905,3 +3905,187 @@ events:
         - "/Applications/Xcode.app/Contents/Applications"
         - "/Applications/Xcode.app/Contents/Developer/Applications"
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIPOSupported.cmake:197 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckIPOSupported.cmake:320 (_ipo_run_language_check)"
+      - "CMakeLists.txt:124 (check_ipo_supported)"
+    directories:
+      source: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src"
+      binary: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin"
+    buildResult:
+      variable: "_IPO_LANGUAGE_CHECK_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile
+        /opt/homebrew/bin/cmake -S/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src -B/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin --check-build-system CMakeFiles/Makefile.cmake 0
+        /opt/homebrew/bin/cmake -E cmake_progress_start /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin//CMakeFiles/progress.marks
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/Makefile2 all
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/depend
+        cd /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin && /opt/homebrew/bin/cmake -E cmake_depends "Unix Makefiles" /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir/DependInfo.cmake foo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build
+        [ 25%] Building CXX object CMakeFiles/foo.dir/foo.cpp.o
+        /usr/bin/c++   -flto=thin -MD -MT CMakeFiles/foo.dir/foo.cpp.o -MF CMakeFiles/foo.dir/foo.cpp.o.d -o CMakeFiles/foo.dir/foo.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src/foo.cpp
+        [ 50%] Linking CXX static library libfoo.a
+        /opt/homebrew/bin/cmake -P CMakeFiles/foo.dir/cmake_clean_target.cmake
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/foo.dir/link.txt --verbose=1
+        "/usr/bin/ar" qc libfoo.a CMakeFiles/foo.dir/foo.cpp.o
+        "/usr/bin/ranlib" libfoo.a
+        [ 50%] Built target foo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/depend
+        cd /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin && /opt/homebrew/bin/cmake -E cmake_depends "Unix Makefiles" /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir/DependInfo.cmake boo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/build
+        [ 75%] Building CXX object CMakeFiles/boo.dir/main.cpp.o
+        /usr/bin/c++   -flto=thin -MD -MT CMakeFiles/boo.dir/main.cpp.o -MF CMakeFiles/boo.dir/main.cpp.o.d -o CMakeFiles/boo.dir/main.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src/main.cpp
+        [100%] Linking CXX executable boo
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/boo.dir/link.txt --verbose=1
+        /usr/bin/c++ -flto=thin -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/boo.dir/main.cpp.o -o boo  libfoo.a
+        [100%] Built target boo
+        /opt/homebrew/bin/cmake -E cmake_progress_start /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles 0
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIPOSupported.cmake:197 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckIPOSupported.cmake:320 (_ipo_run_language_check)"
+      - "CMakeLists.txt:142 (check_ipo_supported)"
+    directories:
+      source: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src"
+      binary: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin"
+    buildResult:
+      variable: "_IPO_LANGUAGE_CHECK_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile
+        /opt/homebrew/bin/cmake -S/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src -B/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin --check-build-system CMakeFiles/Makefile.cmake 0
+        /opt/homebrew/bin/cmake -E cmake_progress_start /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin//CMakeFiles/progress.marks
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/Makefile2 all
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/depend
+        cd /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin && /opt/homebrew/bin/cmake -E cmake_depends "Unix Makefiles" /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir/DependInfo.cmake foo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build
+        [ 25%] Building CXX object CMakeFiles/foo.dir/foo.cpp.o
+        /usr/bin/c++   -flto=thin -MD -MT CMakeFiles/foo.dir/foo.cpp.o -MF CMakeFiles/foo.dir/foo.cpp.o.d -o CMakeFiles/foo.dir/foo.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src/foo.cpp
+        [ 50%] Linking CXX static library libfoo.a
+        /opt/homebrew/bin/cmake -P CMakeFiles/foo.dir/cmake_clean_target.cmake
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/foo.dir/link.txt --verbose=1
+        "/usr/bin/ar" qc libfoo.a CMakeFiles/foo.dir/foo.cpp.o
+        "/usr/bin/ranlib" libfoo.a
+        [ 50%] Built target foo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/depend
+        cd /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin && /opt/homebrew/bin/cmake -E cmake_depends "Unix Makefiles" /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir/DependInfo.cmake boo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/build
+        [ 75%] Building CXX object CMakeFiles/boo.dir/main.cpp.o
+        /usr/bin/c++   -flto=thin -MD -MT CMakeFiles/boo.dir/main.cpp.o -MF CMakeFiles/boo.dir/main.cpp.o.d -o CMakeFiles/boo.dir/main.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src/main.cpp
+        [100%] Linking CXX executable boo
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/boo.dir/link.txt --verbose=1
+        /usr/bin/c++ -flto=thin -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/boo.dir/main.cpp.o -o boo  libfoo.a
+        [100%] Built target boo
+        /opt/homebrew/bin/cmake -E cmake_progress_start /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles 0
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIPOSupported.cmake:197 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckIPOSupported.cmake:320 (_ipo_run_language_check)"
+      - "CMakeLists.txt:142 (check_ipo_supported)"
+    directories:
+      source: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src"
+      binary: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin"
+    buildResult:
+      variable: "_IPO_LANGUAGE_CHECK_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile
+        /opt/homebrew/bin/cmake -S/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src -B/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin --check-build-system CMakeFiles/Makefile.cmake 0
+        /opt/homebrew/bin/cmake -E cmake_progress_start /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin//CMakeFiles/progress.marks
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/Makefile2 all
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/depend
+        cd /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin && /opt/homebrew/bin/cmake -E cmake_depends "Unix Makefiles" /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir/DependInfo.cmake foo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build
+        [ 25%] Building CXX object CMakeFiles/foo.dir/foo.cpp.o
+        /usr/bin/c++   -flto=thin -MD -MT CMakeFiles/foo.dir/foo.cpp.o -MF CMakeFiles/foo.dir/foo.cpp.o.d -o CMakeFiles/foo.dir/foo.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src/foo.cpp
+        [ 50%] Linking CXX static library libfoo.a
+        /opt/homebrew/bin/cmake -P CMakeFiles/foo.dir/cmake_clean_target.cmake
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/foo.dir/link.txt --verbose=1
+        "/usr/bin/ar" qc libfoo.a CMakeFiles/foo.dir/foo.cpp.o
+        "/usr/bin/ranlib" libfoo.a
+        [ 50%] Built target foo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/depend
+        cd /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin && /opt/homebrew/bin/cmake -E cmake_depends "Unix Makefiles" /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir/DependInfo.cmake boo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/build
+        [ 75%] Building CXX object CMakeFiles/boo.dir/main.cpp.o
+        /usr/bin/c++   -flto=thin -MD -MT CMakeFiles/boo.dir/main.cpp.o -MF CMakeFiles/boo.dir/main.cpp.o.d -o CMakeFiles/boo.dir/main.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src/main.cpp
+        [100%] Linking CXX executable boo
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/boo.dir/link.txt --verbose=1
+        /usr/bin/c++ -flto=thin -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/boo.dir/main.cpp.o -o boo  libfoo.a
+        [100%] Built target boo
+        /opt/homebrew/bin/cmake -E cmake_progress_start /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles 0
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIPOSupported.cmake:197 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckIPOSupported.cmake:320 (_ipo_run_language_check)"
+      - "CMakeLists.txt:142 (check_ipo_supported)"
+    directories:
+      source: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src"
+      binary: "/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin"
+    buildResult:
+      variable: "_IPO_LANGUAGE_CHECK_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile
+        /opt/homebrew/bin/cmake -S/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src -B/Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin --check-build-system CMakeFiles/Makefile.cmake 0
+        /opt/homebrew/bin/cmake -E cmake_progress_start /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin//CMakeFiles/progress.marks
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/Makefile2 all
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/depend
+        cd /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin && /opt/homebrew/bin/cmake -E cmake_depends "Unix Makefiles" /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir/DependInfo.cmake foo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build
+        [ 25%] Building CXX object CMakeFiles/foo.dir/foo.cpp.o
+        /usr/bin/c++   -flto=thin -MD -MT CMakeFiles/foo.dir/foo.cpp.o -MF CMakeFiles/foo.dir/foo.cpp.o.d -o CMakeFiles/foo.dir/foo.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src/foo.cpp
+        [ 50%] Linking CXX static library libfoo.a
+        /opt/homebrew/bin/cmake -P CMakeFiles/foo.dir/cmake_clean_target.cmake
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/foo.dir/link.txt --verbose=1
+        "/usr/bin/ar" qc libfoo.a CMakeFiles/foo.dir/foo.cpp.o
+        "/usr/bin/ranlib" libfoo.a
+        [ 50%] Built target foo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/depend
+        cd /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin && /opt/homebrew/bin/cmake -E cmake_depends "Unix Makefiles" /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir/DependInfo.cmake boo
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/build
+        [ 75%] Building CXX object CMakeFiles/boo.dir/main.cpp.o
+        /usr/bin/c++   -flto=thin -MD -MT CMakeFiles/boo.dir/main.cpp.o -MF CMakeFiles/boo.dir/main.cpp.o.d -o CMakeFiles/boo.dir/main.cpp.o -c /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/src/main.cpp
+        [100%] Linking CXX executable boo
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/boo.dir/link.txt --verbose=1
+        /usr/bin/c++ -flto=thin -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/boo.dir/main.cpp.o -o boo  libfoo.a
+        [100%] Built target boo
+        /opt/homebrew/bin/cmake -E cmake_progress_start /Users/sujaykonda/Downloads/crypto_hft/build_storage/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles 0
+        
+      exitCode: 0
+...

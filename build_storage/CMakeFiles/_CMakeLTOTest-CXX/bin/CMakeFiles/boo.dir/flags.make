@@ -6,7 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = 
 
-CXX_FLAGSarm64 = -flto=thin -arch arm64
-
-CXX_FLAGS = -flto=thin -arch arm64
+CXX_FLAGS = -flto=thin
 

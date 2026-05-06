@@ -5,8 +5,12 @@
 #include <chrono>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
+#include <utility>
+#include <vector>
 #include <openssl/hmac.h>
 #include <openssl/sha.h>
+#include <nlohmann/json.hpp>
 
 namespace hft {
 
@@ -48,6 +52,21 @@ public:
         return hmac_sha256(payload);
     }
 
+    std::string sign(const std::string& method,
+                     uint64_t id,
+                     const nlohmann::json& params,
+                     uint64_t nonce) const {
+        return sign(method, id, parameter_string(params), nonce);
+    }
+
+    static std::string parameter_string(const nlohmann::json& params) {
+        if (params.is_null()) {
+            return "";
+        }
+
+        return append_parameter_string(params, 0);
+    }
+
     // ───────────────────────────────────────────────────────────────────
     // Get current timestamp in milliseconds
     // ───────────────────────────────────────────────────────────────────
@@ -64,6 +83,52 @@ public:
     bool is_configured() const { return !api_key_.empty() && !api_secret_.empty(); }
 
 private:
+    static std::string scalar_to_string(const nlohmann::json& value) {
+        if (value.is_string()) {
+            return value.get<std::string>();
+        }
+        if (value.is_null()) {
+            return "null";
+        }
+        if (value.is_boolean()) {
+            return value.get<bool>() ? "true" : "false";
+        }
+        return value.dump();
+    }
+
+    static std::string append_parameter_string(const nlohmann::json& value, int level) {
+        constexpr int kMaxNestedLevel = 3;
+        if (level >= kMaxNestedLevel || value.is_primitive()) {
+            return scalar_to_string(value);
+        }
+
+        std::string result;
+        if (value.is_array()) {
+            for (const auto& item : value) {
+                result += append_parameter_string(item, level + 1);
+            }
+            return result;
+        }
+
+        if (!value.is_object()) {
+            return scalar_to_string(value);
+        }
+
+        std::vector<std::string> keys;
+        keys.reserve(value.size());
+        for (auto it = value.begin(); it != value.end(); ++it) {
+            keys.push_back(it.key());
+        }
+        std::sort(keys.begin(), keys.end());
+
+        for (const std::string& key : keys) {
+            result += key;
+            result += append_parameter_string(value.at(key), level + 1);
+        }
+
+        return result;
+    }
+
     std::string hmac_sha256(const std::string& data) const {
         unsigned char digest[SHA256_DIGEST_LENGTH];
         unsigned int digest_len = SHA256_DIGEST_LENGTH;

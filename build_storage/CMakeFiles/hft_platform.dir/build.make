@@ -95,6 +95,8 @@ hft_platform_EXTERNAL_OBJECTS =
 
 hft_platform: CMakeFiles/hft_platform.dir/src/main.cpp.o
 hft_platform: CMakeFiles/hft_platform.dir/build.make
+hft_platform: libhft_storage.a
+hft_platform: libhft_exchange.a
 hft_platform: /opt/homebrew/lib/libssl.dylib
 hft_platform: /opt/homebrew/lib/libcrypto.dylib
 hft_platform: CMakeFiles/hft_platform.dir/link.txt

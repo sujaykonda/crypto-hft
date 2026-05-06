@@ -6,6 +6,9 @@
 #include <functional>
 #include <memory>
 #include <atomic>
+#include <algorithm>
+#include <cstdio>
+#include <cstring>
 #include <nlohmann/json.hpp>
 
 namespace hft {
@@ -125,8 +128,7 @@ public:
             params["exec_inst"] = json::array({"POST_ONLY"});
         }
         
-        std::string params_str = params.dump();
-        std::string sig = auth_.sign(method, id, params_str, nonce);
+        std::string sig = auth_.sign(method, id, params, nonce);
         
         return {
             {"id", id},
@@ -152,8 +154,7 @@ public:
             params["order_id"] = std::to_string(order_id);
         }
         
-        std::string params_str = params.dump();
-        std::string sig = auth_.sign(method, id, params_str, nonce);
+        std::string sig = auth_.sign(method, id, params, nonce);
         
         return {
             {"id", id},
@@ -174,8 +175,7 @@ public:
             params["instrument_name"] = instrument_name;
         }
         
-        std::string params_str = params.empty() ? "" : params.dump();
-        std::string sig = auth_.sign(method, id, params_str, nonce);
+        std::string sig = auth_.sign(method, id, params.empty() ? "" : AuthHandler::parameter_string(params), nonce);
         
         return {
             {"id", id},
@@ -196,8 +196,7 @@ public:
             params["instrument_name"] = instrument_name;
         }
         
-        std::string params_str = params.empty() ? "" : params.dump();
-        std::string sig = auth_.sign(method, id, params_str, nonce);
+        std::string sig = auth_.sign(method, id, params.empty() ? "" : AuthHandler::parameter_string(params), nonce);
         
         return {
             {"id", id},
@@ -226,8 +225,7 @@ public:
             })}
         };
         
-        std::string params_str = params.dump();
-        std::string sig = auth_.sign(method, id, params_str, nonce);
+        std::string sig = auth_.sign(method, id, params, nonce);
         
         return {
             {"id", id},
@@ -249,8 +247,7 @@ public:
             })}
         };
         
-        std::string params_str = params.dump();
-        std::string sig = auth_.sign(method, id, params_str, nonce);
+        std::string sig = auth_.sign(method, id, params, nonce);
         
         return {
             {"id", id},
@@ -319,57 +316,60 @@ public:
             return result;
         }
         
-        if (response.contains("result")) {
-            const auto& res = response["result"];
+        if (const json* res = order_payload(response)) {
             
-            if (res.contains("client_oid")) {
-                auto& val = res["client_oid"];
-                result.client_order_id = val.is_string() ? 
-                    std::stoull(val.get<std::string>()) : val.get<uint64_t>();
+            if (res->contains("client_oid")) {
+                result.client_order_id = json_to_u64((*res)["client_oid"]);
             }
             
-            if (res.contains("order_id")) {
-                auto& val = res["order_id"];
-                result.exchange_order_id = val.is_string() ? 
-                    std::stoull(val.get<std::string>()) : val.get<uint64_t>();
+            if (res->contains("order_id")) {
+                result.exchange_order_id = json_to_u64((*res)["order_id"]);
             }
             
-            if (res.contains("status")) {
-                result.status = parse_status(res["status"].get<std::string>());
+            if (res->contains("cumulative_quantity")) {
+                result.filled_quantity = json_to_double((*res)["cumulative_quantity"]);
             }
             
-            if (res.contains("cumulative_quantity")) {
-                auto& val = res["cumulative_quantity"];
-                result.filled_quantity = val.is_string() ? 
-                    std::stod(val.get<std::string>()) : val.get<double>();
+            if (res->contains("remaining_quantity")) {
+                result.remaining_quantity = json_to_double((*res)["remaining_quantity"]);
+            } else if (res->contains("quantity")) {
+                const double quantity = json_to_double((*res)["quantity"]);
+                result.remaining_quantity = std::max(0.0, quantity - result.filled_quantity);
             }
             
-            if (res.contains("remaining_quantity")) {
-                auto& val = res["remaining_quantity"];
-                result.remaining_quantity = val.is_string() ? 
-                    std::stod(val.get<std::string>()) : val.get<double>();
+            if (res->contains("avg_price")) {
+                result.avg_price = json_to_double((*res)["avg_price"]);
             }
             
-            if (res.contains("avg_price")) {
-                auto& val = res["avg_price"];
-                result.avg_price = val.is_string() ? 
-                    std::stod(val.get<std::string>()) : val.get<double>();
+            if (res->contains("cumulative_fee")) {
+                result.fee = json_to_double((*res)["cumulative_fee"]);
             }
             
-            if (res.contains("cumulative_fee")) {
-                auto& val = res["cumulative_fee"];
-                result.fee = val.is_string() ? 
-                    std::stod(val.get<std::string>()) : val.get<double>();
-            }
-            
-            if (res.contains("fee_currency")) {
-                std::string fc = res["fee_currency"].get<std::string>();
+            if (res->contains("fee_currency") || res->contains("fee_instrument_name")) {
+                const auto& fee_value =
+                    res->contains("fee_currency") ? (*res)["fee_currency"] : (*res)["fee_instrument_name"];
+                std::string fc = fee_value.get<std::string>();
                 std::strncpy(result.fee_currency, fc.c_str(), 
                             sizeof(result.fee_currency) - 1);
             }
             
-            if (res.contains("update_time")) {
-                result.exchange_timestamp_ns = res["update_time"].get<int64_t>() * 1000000;
+            if (res->contains("transaction_time_ns")) {
+                result.exchange_timestamp_ns = json_to_i64((*res)["transaction_time_ns"]);
+            } else if (res->contains("update_time_ns")) {
+                result.exchange_timestamp_ns = json_to_i64((*res)["update_time_ns"]);
+            } else if (res->contains("update_time")) {
+                result.exchange_timestamp_ns = exchange_time_to_ns(json_to_u64((*res)["update_time"]));
+            }
+
+            if (res->contains("reason")) {
+                result.error_code = static_cast<int32_t>(json_to_i64((*res)["reason"]));
+            }
+
+            if (res->contains("status")) {
+                result.status = parse_status((*res)["status"].get<std::string>());
+                if (result.status == OrderStatus::NEW && result.filled_quantity > 0.0) {
+                    result.status = OrderStatus::PARTIALLY_FILLED;
+                }
             }
         }
         
@@ -389,18 +389,107 @@ public:
     }
 
     static bool is_order_update(const json& msg) {
-        if (!msg.contains("method")) return false;
-        std::string method = msg["method"].get<std::string>();
-        return method.find("user.order") != std::string::npos;
+        return result_channel(msg).find("user.order") != std::string::npos ||
+               result_channel(msg).find("user.advanced.order") != std::string::npos;
     }
 
     static bool is_trade_update(const json& msg) {
-        if (!msg.contains("method")) return false;
-        std::string method = msg["method"].get<std::string>();
-        return method.find("user.trade") != std::string::npos;
+        return result_channel(msg).find("user.trade") != std::string::npos;
     }
 
 private:
+    static const json* order_payload(const json& response) {
+        if (!response.contains("result")) {
+            return nullptr;
+        }
+
+        const auto& result = response["result"];
+        if (result.is_object() && result.contains("data") && result["data"].is_array() &&
+            !result["data"].empty() && result["data"].front().is_object()) {
+            return &result["data"].front();
+        }
+
+        if (result.is_object()) {
+            return &result;
+        }
+
+        if (result.is_array() && !result.empty() && result.front().is_object()) {
+            return &result.front();
+        }
+
+        return nullptr;
+    }
+
+    static std::string result_channel(const json& msg) {
+        if (!msg.contains("result") || !msg["result"].is_object()) {
+            return "";
+        }
+
+        return msg["result"].value("channel", "");
+    }
+
+    static uint64_t json_to_u64(const json& value) {
+        if (value.is_number_unsigned()) {
+            return value.get<uint64_t>();
+        }
+        if (value.is_number_integer()) {
+            const auto parsed = value.get<int64_t>();
+            return parsed > 0 ? static_cast<uint64_t>(parsed) : 0;
+        }
+        if (value.is_string()) {
+            try {
+                return std::stoull(value.get<std::string>());
+            } catch (...) {
+                return 0;
+            }
+        }
+        return 0;
+    }
+
+    static int64_t json_to_i64(const json& value) {
+        if (value.is_number_integer()) {
+            return value.get<int64_t>();
+        }
+        if (value.is_number_unsigned()) {
+            return static_cast<int64_t>(value.get<uint64_t>());
+        }
+        if (value.is_string()) {
+            try {
+                return std::stoll(value.get<std::string>());
+            } catch (...) {
+                return 0;
+            }
+        }
+        return 0;
+    }
+
+    static double json_to_double(const json& value) {
+        if (value.is_number()) {
+            return value.get<double>();
+        }
+        if (value.is_string()) {
+            try {
+                return std::stod(value.get<std::string>());
+            } catch (...) {
+                return 0.0;
+            }
+        }
+        return 0.0;
+    }
+
+    static int64_t exchange_time_to_ns(uint64_t raw_time) {
+        if (raw_time == 0) {
+            return 0;
+        }
+        if (raw_time > 10'000'000'000'000'000ULL) {
+            return static_cast<int64_t>(raw_time);
+        }
+        if (raw_time > 10'000'000'000'000ULL) {
+            return static_cast<int64_t>(raw_time * 1'000ULL);
+        }
+        return static_cast<int64_t>(raw_time * 1'000'000ULL);
+    }
+
     static OrderStatus parse_status(const std::string& status) {
         if (status == "NEW" || status == "PENDING" || status == "ACTIVE") 
             return OrderStatus::NEW;

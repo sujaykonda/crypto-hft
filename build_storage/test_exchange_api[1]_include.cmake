@@ -1,0 +1,5 @@
+if(EXISTS "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_exchange_api[1]_tests.cmake")
+  include("/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_exchange_api[1]_tests.cmake")
+else()
+  add_test(test_exchange_api_NOT_BUILT test_exchange_api_NOT_BUILT)
+endif()

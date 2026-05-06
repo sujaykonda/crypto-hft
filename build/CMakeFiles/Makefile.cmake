@@ -72,5 +72,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/hft_storage.dir/DependInfo.cmake"
+  "CMakeFiles/hft_exchange.dir/DependInfo.cmake"
   "CMakeFiles/hft_platform.dir/DependInfo.cmake"
   )
