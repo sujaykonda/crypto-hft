@@ -1,2 +1,0 @@
-/usr/bin/ar qc libhft_storage.a CMakeFiles/hft_storage.dir/src/storage/storage_types.cpp.o CMakeFiles/hft_storage.dir/src/storage/in_memory_storage.cpp.o CMakeFiles/hft_storage.dir/src/storage/jsonl_async_storage.cpp.o
-/usr/bin/ranlib libhft_storage.a

@@ -1,5 +1,0 @@
-if(EXISTS "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_ipc[1]_tests.cmake")
-  include("/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_ipc[1]_tests.cmake")
-else()
-  add_test(test_ipc_NOT_BUILT test_ipc_NOT_BUILT)
-endif()

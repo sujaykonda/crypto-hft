@@ -1,5 +1,0 @@
-if(EXISTS "/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_strategy_runtime[1]_tests.cmake")
-  include("/Users/sujaykonda/Downloads/crypto_hft/build_storage/test_strategy_runtime[1]_tests.cmake")
-else()
-  add_test(test_strategy_runtime_NOT_BUILT test_strategy_runtime_NOT_BUILT)
-endif()

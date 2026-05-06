@@ -1,5 +1,0 @@
-add_test([=[IpcProtocol.ParsesSubscribeSnapshotAndErrors]=]  /Users/sujaykonda/Downloads/crypto_hft/build_storage/test_ipc [==[--gtest_filter=IpcProtocol.ParsesSubscribeSnapshotAndErrors]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[IpcProtocol.ParsesSubscribeSnapshotAndErrors]=]  PROPERTIES DEF_SOURCE_LINE /Users/sujaykonda/Downloads/crypto_hft/tests/test_ipc.cpp:55 WORKING_DIRECTORY /Users/sujaykonda/Downloads/crypto_hft/build_storage SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test([=[UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot]=]  /Users/sujaykonda/Downloads/crypto_hft/build_storage/test_ipc [==[--gtest_filter=UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot]=]  PROPERTIES DEF_SOURCE_LINE /Users/sujaykonda/Downloads/crypto_hft/tests/test_ipc.cpp:74 WORKING_DIRECTORY /Users/sujaykonda/Downloads/crypto_hft/build_storage SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set(  test_ipc_TESTS IpcProtocol.ParsesSubscribeSnapshotAndErrors UnixDomainCommandServer.HandlesPingSubscribeAndSnapshot)
