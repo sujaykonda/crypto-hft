@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/parth/Documents/temp/build_runtime/test_strategy_runtime[1]_tests.cmake")
+  include("C:/Users/parth/Documents/temp/build_runtime/test_strategy_runtime[1]_tests.cmake")
+else()
+  add_test(test_strategy_runtime_NOT_BUILT test_strategy_runtime_NOT_BUILT)
+endif()
