@@ -1,0 +1,32 @@
+# CMake build output
+/build/
+/build_storage/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
+/compile_commands.json
+
+# C/C++ build products
+*.o
+*.o.d
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Test/runtime artifacts
+Testing/
+*.log
+*.jsonl
+*.sock
+
+# OS/editor noise
+.DS_Store
+*/.DS_Store
+.vscode/
+
+# Python cache
+__pycache__/
+*.py[cod]

@@ -1,4 +1,8 @@
+#include "backtest/backtest_replay_driver.hpp"
+#include "backtest/simulated_execution_sink.hpp"
 #include "core/order_executor.hpp"
+#include "exchange/market_data_client.hpp"
+#include "risk/risk_manager.hpp"
 #include "storage/jsonl_async_storage.hpp"
 #include "strategy/example_strategies.hpp"
 #include "strategy/live_order_executor_sink.hpp"
@@ -6,10 +10,12 @@
 #include <chrono>
 #include <csignal>
 #include <cstdlib>
+#include <filesystem>
 #include <iostream>
 #include <memory>
 #include <string>
 #include <thread>
+#include <vector>
 
 using namespace hft;
 
@@ -36,11 +42,97 @@ std::shared_ptr<storage::IStorage> maybe_create_storage() {
     return storage;
 }
 
+double env_double(const char* name, double fallback) {
+    const char* value = std::getenv(name);
+    if (!value || std::string(value).empty()) {
+        return fallback;
+    }
+
+    try {
+        return std::stod(value);
+    } catch (...) {
+        return fallback;
+    }
+}
+
+risk::RiskLimits make_risk_limits_from_env() {
+    risk::RiskLimits limits;
+    limits.max_order_quantity = env_double("CRYPTO_HFT_MAX_ORDER_QTY", 0.0);
+    limits.max_order_notional = env_double("CRYPTO_HFT_MAX_ORDER_NOTIONAL", 0.0);
+    limits.max_net_position_abs = env_double("CRYPTO_HFT_MAX_NET_POSITION_ABS", 0.0);
+    return limits;
+}
+
+void print_usage(const char* program) {
+    std::cout << "Usage:\n"
+              << "  " << program << "                    Run live platform\n"
+              << "  " << program << " --backtest PATH     Replay JSONL storage offline\n"
+              << "  " << program << " --help              Show this help\n";
+}
+
+int run_backtest(const std::filesystem::path& storage_path) {
+    storage::JsonlAsyncStorageConfig config;
+    config.file_path = storage_path;
+    auto storage = std::make_shared<storage::JsonlAsyncStorage>(std::move(config));
+
+    backtest::SimulatedExecutionConfig execution_config;
+    execution_config.maker_fee_bps = 0.0;
+    execution_config.taker_fee_bps = 0.0;
+    backtest::SimulatedExecutionSink execution_sink(nullptr, execution_config);
+    StrategyManager strategy_mgr(&execution_sink);
+
+    strategy_mgr.add_strategy<SimpleMarketMaker>(1, "BTC_USDT", 10.0, 0.001);
+    strategy_mgr.add_strategy<SimpleMarketMaker>(2, "ETH_USDT", 15.0, 0.01);
+    strategy_mgr.add_strategy<SimpleMomentum>(3, "BTC_USDT", 0.5, 0.0005);
+    strategy_mgr.start_all();
+
+    storage::ReplayRequest request;
+    request.max_events = 1024;
+    const backtest::BacktestReplayStats replay_stats =
+        backtest::BacktestReplayDriver(*storage, strategy_mgr, execution_sink).run(request);
+    strategy_mgr.stop_all();
+    storage->close();
+
+    const auto execution_stats = execution_sink.stats();
+    std::cout << "Backtest complete\n";
+    std::cout << "  Events processed: " << replay_stats.events_processed << "\n";
+    std::cout << "  Quote events:     " << replay_stats.quote_events << "\n";
+    std::cout << "  Trade events:     " << replay_stats.trade_events << "\n";
+    std::cout << "  Orders submitted: " << execution_stats.submitted << "\n";
+    std::cout << "  Orders filled:    " << execution_stats.filled << "\n";
+    std::cout << "  Orders rejected:  " << execution_stats.rejected << "\n";
+    std::cout << "  Gross notional:   " << execution_stats.gross_notional << "\n";
+    std::cout << "  Fees:             " << execution_stats.fees << "\n";
+    return 0;
+}
+
 }  // namespace
 
 int main(int argc, char** argv) {
-    (void)argc;
-    (void)argv;
+    if (argc > 1) {
+        const std::string command = argv[1];
+        if (command == "--help" || command == "-h") {
+            print_usage(argv[0]);
+            return 0;
+        }
+        if (command == "--backtest") {
+            if (argc < 3) {
+                std::cerr << "Error: --backtest requires a storage JSONL path\n";
+                print_usage(argv[0]);
+                return 1;
+            }
+            try {
+                return run_backtest(argv[2]);
+            } catch (const std::exception& e) {
+                std::cerr << "Backtest failed: " << e.what() << std::endl;
+                return 1;
+            }
+        }
+
+        std::cerr << "Unknown command: " << command << "\n";
+        print_usage(argv[0]);
+        return 1;
+    }
 
     std::signal(SIGINT, signal_handler);
     std::signal(SIGTERM, signal_handler);
@@ -78,23 +170,41 @@ int main(int argc, char** argv) {
         auto ws_client = std::make_shared<CryptoComWebSocketClient>(
             ioc, ssl_ctx, api_key, api_secret, use_sandbox);
 
-        OrderExecutor executor(ws_client);
-        LiveOrderExecutorSink execution_sink(
+        auto executor = std::make_unique<OrderExecutor>(ws_client);
+        LiveOrderExecutorSink live_execution_sink(
             [&executor](const Trade& trade, OrderCallback callback) {
-                return executor.submit_trade(trade, std::move(callback));
+                return executor->submit_trade(trade, std::move(callback));
             },
             [&executor](const std::string& instrument, uint64_t order_id, uint64_t client_oid) {
-                executor.cancel_order(instrument, order_id, client_oid);
+                executor->cancel_order(instrument, order_id, client_oid);
             },
-            [&executor](const std::string& instrument) { executor.cancel_all_orders(instrument); },
+            [&executor](const std::string& instrument) { executor->cancel_all_orders(instrument); },
             storage);
+        risk::RiskManager risk_manager(make_risk_limits_from_env());
+        risk::RiskCheckedExecutionSink execution_sink(live_execution_sink, risk_manager);
         StrategyManager strategy_mgr(&execution_sink, storage);
 
         strategy_mgr.add_strategy<SimpleMarketMaker>(1, "BTC_USDT", 10.0, 0.001);
         strategy_mgr.add_strategy<SimpleMarketMaker>(2, "ETH_USDT", 15.0, 0.01);
         strategy_mgr.add_strategy<SimpleMomentum>(3, "BTC_USDT", 0.5, 0.0005);
 
-        executor.start();
+        const std::vector<std::string> market_instruments =
+            parse_market_instruments_env({"BTC_USDT", "ETH_USDT"});
+        CryptoComMarketDataClient market_data_client(
+            market_instruments,
+            [&strategy_mgr, &execution_sink](const QuoteUpdate& quote) {
+                execution_sink.update_quote(quote);
+                strategy_mgr.dispatch_quote(quote);
+            },
+            [&strategy_mgr](const TradeEvent& trade) {
+                strategy_mgr.dispatch_trade(trade);
+            },
+            [](const std::string& error) {
+                std::cerr << "[MarketData] " << error << std::endl;
+            },
+            make_crypto_com_market_config(use_sandbox, 10));
+
+        executor->start();
 
         std::thread io_thread([&ioc]() { ioc.run(); });
 
@@ -110,6 +220,9 @@ int main(int argc, char** argv) {
             g_running = false;
         } else {
             strategy_mgr.start_all();
+            market_data_client.start();
+            std::cout << "Market data subscribed to " << market_instruments.size()
+                      << " instruments" << std::endl;
             std::cout << "\nHFT Platform running with " << strategy_mgr.count()
                       << " strategies. Press Ctrl+C to stop.\n"
                       << std::endl;
@@ -121,7 +234,7 @@ int main(int argc, char** argv) {
                 break;
             }
 
-            const auto stats = executor.get_stats();
+            const auto stats = executor->get_stats();
             std::cout << "\n=======================================" << std::endl;
             std::cout << "       Execution Statistics" << std::endl;
             std::cout << "=======================================" << std::endl;
@@ -140,8 +253,9 @@ int main(int argc, char** argv) {
         }
 
         std::cout << "\nShutting down gracefully..." << std::endl;
+        market_data_client.stop();
         strategy_mgr.stop_all();
-        executor.stop();
+        executor->stop();
         ioc.stop();
 
         if (io_thread.joinable()) {

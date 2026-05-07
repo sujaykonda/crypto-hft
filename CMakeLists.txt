@@ -40,8 +40,9 @@ endif()
 find_package(Threads REQUIRED)
 
 option(BUILD_PLATFORM "Build the live trading executable" ON)
+option(BUILD_TESTS "Build test executables" OFF)
 
-if(BUILD_PLATFORM)
+if(BUILD_PLATFORM OR BUILD_TESTS)
     # Boost (Beast is header-only; prefer BoostConfig.cmake targets)
     if(POLICY CMP0167)
         cmake_policy(SET CMP0167 OLD)
@@ -73,6 +74,26 @@ target_link_libraries(hft_storage
         nlohmann_json::nlohmann_json
         Threads::Threads
 )
+
+if(BUILD_PLATFORM OR BUILD_TESTS)
+    add_library(hft_exchange
+        src/exchange/market_data_client.cpp
+    )
+
+    target_include_directories(hft_exchange
+        PUBLIC
+            ${CMAKE_SOURCE_DIR}/include
+    )
+
+    target_link_libraries(hft_exchange
+        PUBLIC
+            Boost::headers
+            OpenSSL::SSL
+            OpenSSL::Crypto
+            nlohmann_json::nlohmann_json
+            Threads::Threads
+    )
+endif()
 
 # ═══════════════════════════════════════════════════════════════════════════
 # Main Executable
@@ -107,9 +128,7 @@ if(BUILD_PLATFORM)
     target_link_libraries(hft_platform
         PRIVATE
             hft_storage
-            Boost::headers
-            OpenSSL::SSL
-            OpenSSL::Crypto
+            hft_exchange
             nlohmann_json::nlohmann_json
             Threads::Threads
     )
@@ -132,7 +151,6 @@ endif()
 # ═══════════════════════════════════════════════════════════════════════════
 # Tests (optional)
 # ═══════════════════════════════════════════════════════════════════════════
-option(BUILD_TESTS "Build test executables" OFF)
 if(BUILD_TESTS)
     enable_testing()
 
@@ -158,9 +176,46 @@ if(BUILD_TESTS)
             GTest::gtest_main
     )
 
+    add_executable(test_exchange_api tests/test_exchange_api.cpp)
+    target_link_libraries(test_exchange_api
+        PRIVATE
+            hft_exchange
+            GTest::gtest_main
+    )
+
+    add_executable(test_backtest tests/test_backtest.cpp)
+    target_link_libraries(test_backtest
+        PRIVATE
+            hft_storage
+            GTest::gtest_main
+    )
+
+    add_executable(test_orderbook_risk tests/test_orderbook_risk.cpp)
+    target_link_libraries(test_orderbook_risk
+        PRIVATE
+            hft_storage
+            GTest::gtest_main
+    )
+
+    add_executable(test_ipc tests/test_ipc.cpp)
+    target_include_directories(test_ipc
+        PRIVATE
+            ${CMAKE_SOURCE_DIR}/include
+    )
+    target_link_libraries(test_ipc
+        PRIVATE
+            nlohmann_json::nlohmann_json
+            Threads::Threads
+            GTest::gtest_main
+    )
+
     include(GoogleTest)
     gtest_discover_tests(test_storage)
     gtest_discover_tests(test_strategy_runtime)
+    gtest_discover_tests(test_exchange_api)
+    gtest_discover_tests(test_backtest)
+    gtest_discover_tests(test_orderbook_risk)
+    gtest_discover_tests(test_ipc)
 endif()
 
 # ═══════════════════════════════════════════════════════════════════════════
