@@ -1,11 +1,17 @@
 # CMake build output
 /build/
 /build_storage/
+/build_runtime/
+/build_runtime2/
+/build_bench/
 /CMakeFiles/
 /CMakeCache.txt
 /cmake_install.cmake
 /Makefile
 /compile_commands.json
+
+# OMC tool state
+.omc/
 
 # C/C++ build products
 *.o
