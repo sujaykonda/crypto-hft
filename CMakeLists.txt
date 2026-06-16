@@ -176,6 +176,17 @@ if(BUILD_TESTS)
             GTest::gtest_main
     )
 
+    add_executable(bench_hot_path tests/bench_hot_path.cpp)
+    target_link_libraries(bench_hot_path
+        PRIVATE
+            hft_storage
+            Threads::Threads
+    )
+    target_compile_options(bench_hot_path PRIVATE
+        $<$<CONFIG:Release>:-O3 -march=native -mtune=native -DNDEBUG>
+        $<$<CONFIG:RelWithDebInfo>:-O2 -g -march=native -DNDEBUG>
+    )
+
     add_executable(test_exchange_api tests/test_exchange_api.cpp)
     target_link_libraries(test_exchange_api
         PRIVATE
